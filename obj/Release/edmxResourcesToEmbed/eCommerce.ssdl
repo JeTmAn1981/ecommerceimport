@@ -1,0 +1,1185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eCommerceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ChargebackString">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="String" Type="char" MaxLength="124" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'eCommerce.dbo.ChargebackStringFields' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ChargebackStringFields">
+    <Key>
+      <PropertyRef Name="Invoice" />
+    </Key>
+    <Property Name="Invoice" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="DataDate" Type="varchar" MaxLength="16" />
+    <Property Name="DebitGL" Type="varchar" MaxLength="24" />
+    <Property Name="CreditGL" Type="varchar" MaxLength="24" />
+    <Property Name="Amount" Type="char" MaxLength="12" />
+    <Property Name="Description" Type="varchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="D_Dates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="the_date" Type="datetime" />
+    <Property Name="the_date_char" Type="varchar" MaxLength="10" />
+    <Property Name="the_day_nbr" Type="tinyint" />
+    <Property Name="cal_month_name" Type="varchar" MaxLength="10" />
+    <Property Name="cal_month_nbr" Type="tinyint" />
+    <Property Name="cal_year_nbr" Type="smallint" />
+    <Property Name="fiscal_month_nbr" Type="tinyint" />
+    <Property Name="fiscal_year_nbr" Type="smallint" />
+    <Property Name="fiscal_quarter_nbr" Type="tinyint" />
+    <Property Name="fiscal_quarter_name" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="dtproperties">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="objectid" Type="int" />
+    <Property Name="property" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="value" Type="varchar" MaxLength="255" />
+    <Property Name="uvalue" Type="nvarchar" MaxLength="255" />
+    <Property Name="lvalue" Type="image" />
+    <Property Name="version" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="eCommerceImport">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RecordIndicator" Type="varchar(max)" />
+    <Property Name="TransactionConfirmationID" Type="varchar(max)" />
+    <Property Name="BillerProductCode" Type="varchar(max)" />
+    <Property Name="AmountDue" Type="varchar(max)" />
+    <Property Name="PaymentAmount" Type="varchar(max)" />
+    <Property Name="ConvenienceFee" Type="varchar(max)" />
+    <Property Name="TotalAmount" Type="varchar(max)" />
+    <Property Name="PaymentEffectiveDate" Type="varchar(max)" />
+    <Property Name="InitiationDate" Type="varchar(max)" />
+    <Property Name="PaymentType" Type="varchar(max)" />
+    <Property Name="PaymentAuthorization" Type="varchar(max)" />
+    <Property Name="PaymentStatus" Type="varchar(max)" />
+    <Property Name="ACHReturnCode" Type="varchar(max)" />
+    <Property Name="ReasonDescription" Type="varchar(max)" />
+    <Property Name="ReturnDate" Type="varchar(max)" />
+    <Property Name="AccessMethod" Type="varchar(max)" />
+    <Property Name="UserID" Type="varchar(max)" />
+    <Property Name="FirstName" Type="varchar(max)" />
+    <Property Name="LastName" Type="varchar(max)" />
+    <Property Name="CompanyName" Type="varchar(max)" />
+    <Property Name="Phone" Type="varchar(max)" />
+    <Property Name="StreetAddress1" Type="varchar(max)" />
+    <Property Name="StreetAddress2" Type="varchar(max)" />
+    <Property Name="City" Type="varchar(max)" />
+    <Property Name="StateCode" Type="varchar(max)" />
+    <Property Name="ZipCode5" Type="varchar(max)" />
+    <Property Name="ZipCode4" Type="varchar(max)" />
+    <Property Name="Email" Type="varchar(max)" />
+    <Property Name="Col029" Type="varchar(max)" />
+    <Property Name="DateSubmitted" Type="varchar(max)" />
+    <Property Name="Col031" Type="varchar(max)" />
+    <Property Name="ProductName" Type="varchar(max)" />
+    <Property Name="Col033" Type="varchar(max)" />
+    <Property Name="TransactionKey" Type="varchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'eCommerce.dbo.eCommerceImportTestData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="eCommerceImportTestData">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="RecordIndicator" Type="varchar(max)" />
+    <Property Name="TransactionConfirmationID" Type="varchar(max)" />
+    <Property Name="BillerProductCode" Type="varchar(max)" />
+    <Property Name="AmountDue" Type="varchar(max)" />
+    <Property Name="PaymentAmount" Type="varchar(max)" />
+    <Property Name="ConvenienceFee" Type="varchar(max)" />
+    <Property Name="TotalAmount" Type="varchar(max)" />
+    <Property Name="PaymentEffectiveDate" Type="varchar(max)" />
+    <Property Name="InitiationDate" Type="varchar(max)" />
+    <Property Name="PaymentType" Type="varchar(max)" />
+    <Property Name="PaymentAuthorization" Type="varchar(max)" />
+    <Property Name="PaymentStatus" Type="varchar(max)" />
+    <Property Name="ACHReturnCode" Type="varchar(max)" />
+    <Property Name="ReasonDescription" Type="varchar(max)" />
+    <Property Name="ReturnDate" Type="varchar(max)" />
+    <Property Name="AccessMethod" Type="varchar(max)" />
+    <Property Name="UserID" Type="varchar(max)" />
+    <Property Name="FirstName" Type="varchar(max)" />
+    <Property Name="LastName" Type="varchar(max)" />
+    <Property Name="CompanyName" Type="varchar(max)" />
+    <Property Name="Phone" Type="varchar(max)" />
+    <Property Name="StreetAddress1" Type="varchar(max)" />
+    <Property Name="StreetAddress2" Type="varchar(max)" />
+    <Property Name="City" Type="varchar(max)" />
+    <Property Name="StateCode" Type="varchar(max)" />
+    <Property Name="ZipCode5" Type="varchar(max)" />
+    <Property Name="ZipCode4" Type="varchar(max)" />
+    <Property Name="Email" Type="varchar(max)" />
+    <Property Name="Col029" Type="varchar(max)" />
+    <Property Name="DateSubmitted" Type="varchar(max)" />
+    <Property Name="Col031" Type="varchar(max)" />
+    <Property Name="ProductName" Type="varchar(max)" />
+    <Property Name="Col033" Type="varchar(max)" />
+    <Property Name="TransactionKey" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Invoice_Trans">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Invoice" Type="int" />
+    <Property Name="Set_Number" Type="int" />
+    <Property Name="Item_Type" Type="int" />
+    <Property Name="Cost" Type="money" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Total" Type="money" />
+    <Property Name="Item_ID" Type="int" />
+    <Property Name="Date_Submitted" Type="datetime" />
+    <Property Name="Transaction_Status" Type="int" />
+    <Property Name="Status_User" Type="varchar" MaxLength="50" />
+    <Property Name="Status_Date" Type="datetime" />
+    <Property Name="Date_Processed" Type="datetime" />
+    <Property Name="Coupon_Code" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Payment_Types">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RemittanceDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DataDate" Type="datetime" />
+    <Property Name="Completed" Type="int" />
+    <Property Name="RecordIndicator" Type="char" MaxLength="1" />
+    <Property Name="TransactionConfirmationID" Type="varchar" MaxLength="15" />
+    <Property Name="BillerProductCode" Type="varchar" MaxLength="32" />
+    <Property Name="AmountDue" Type="money" />
+    <Property Name="PaymentAmount" Type="money" />
+    <Property Name="ConvenienceFee" Type="money" />
+    <Property Name="TotalAmount" Type="money" />
+    <Property Name="PaymentEffectiveDate" Type="char" MaxLength="8" />
+    <Property Name="InitiationDate" Type="char" MaxLength="8" />
+    <Property Name="PaymentType" Type="varchar" MaxLength="3" />
+    <Property Name="PaymentAuthorization" Type="varchar" MaxLength="15" />
+    <Property Name="PaymentStatus" Type="varchar" MaxLength="4" />
+    <Property Name="ACHReturnCode" Type="varchar" MaxLength="4" />
+    <Property Name="ReasonDescription" Type="varchar" MaxLength="48" />
+    <Property Name="ReturnDate" Type="char" MaxLength="8" />
+    <Property Name="AccessMethod" Type="varchar" MaxLength="3" />
+    <Property Name="UserID" Type="varchar" MaxLength="16" />
+    <Property Name="FirstName" Type="varchar" MaxLength="30" />
+    <Property Name="LastName" Type="varchar" MaxLength="30" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="30" />
+    <Property Name="Phone" Type="char" MaxLength="10" />
+    <Property Name="StreetAddress1" Type="varchar" MaxLength="50" />
+    <Property Name="StreetAddress2" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="30" />
+    <Property Name="StateCode" Type="char" MaxLength="2" />
+    <Property Name="ZipCode5" Type="char" MaxLength="5" />
+    <Property Name="ZipCode4" Type="char" MaxLength="4" />
+    <Property Name="Email" Type="varchar" MaxLength="256" />
+    <Property Name="DateSubmitted" Type="datetime" />
+    <Property Name="ProductName" Type="varchar" MaxLength="80" />
+    <Property Name="TransactionKey" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'eCommerce.dbo.RemittanceDetailCopy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="RemittanceDetailCopy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="DataDate" Type="datetime" />
+    <Property Name="Completed" Type="int" />
+    <Property Name="RecordIndicator" Type="char" MaxLength="1" />
+    <Property Name="TransactionConfirmationID" Type="varchar" MaxLength="15" />
+    <Property Name="BillerProductCode" Type="varchar" MaxLength="32" />
+    <Property Name="AmountDue" Type="money" />
+    <Property Name="PaymentAmount" Type="money" />
+    <Property Name="ConvenienceFee" Type="money" />
+    <Property Name="TotalAmount" Type="money" />
+    <Property Name="PaymentEffectiveDate" Type="char" MaxLength="8" />
+    <Property Name="InitiationDate" Type="char" MaxLength="8" />
+    <Property Name="PaymentType" Type="varchar" MaxLength="3" />
+    <Property Name="PaymentAuthorization" Type="varchar" MaxLength="15" />
+    <Property Name="PaymentStatus" Type="varchar" MaxLength="4" />
+    <Property Name="ACHReturnCode" Type="varchar" MaxLength="4" />
+    <Property Name="ReasonDescription" Type="varchar" MaxLength="48" />
+    <Property Name="ReturnDate" Type="char" MaxLength="8" />
+    <Property Name="AccessMethod" Type="varchar" MaxLength="3" />
+    <Property Name="UserID" Type="varchar" MaxLength="16" />
+    <Property Name="FirstName" Type="varchar" MaxLength="30" />
+    <Property Name="LastName" Type="varchar" MaxLength="30" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="30" />
+    <Property Name="Phone" Type="char" MaxLength="10" />
+    <Property Name="StreetAddress1" Type="varchar" MaxLength="50" />
+    <Property Name="StreetAddress2" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="30" />
+    <Property Name="StateCode" Type="char" MaxLength="2" />
+    <Property Name="ZipCode5" Type="char" MaxLength="5" />
+    <Property Name="ZipCode4" Type="char" MaxLength="4" />
+    <Property Name="Email" Type="varchar" MaxLength="256" />
+    <Property Name="DateSubmitted" Type="datetime" />
+    <Property Name="ProductName" Type="varchar" MaxLength="80" />
+    <Property Name="TransactionKey" Type="int" />
+  </EntityType>
+  <EntityType Name="ReturnedPaymentSupervisors">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="SetNumbers">
+    <Key>
+      <PropertyRef Name="Set_Number" />
+    </Key>
+    <Property Name="Set_Number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Invoice" Type="int" />
+  </EntityType>
+  <EntityType Name="SetReversals">
+    <Key>
+      <PropertyRef Name="Set_Number" />
+    </Key>
+    <Property Name="Set_Number" Type="int" Nullable="false" />
+    <Property Name="Invoice" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'eCommerce.dbo.SQLInjection_Test' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SQLInjection_Test">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="TABLE_CATALOG" Type="nvarchar" MaxLength="128" />
+    <Property Name="TABLE_SCHEMA" Type="nvarchar" MaxLength="128" />
+    <Property Name="TABLE_NAME" Type="nvarchar" MaxLength="128" />
+    <Property Name="COLUMN_NAME" Type="nvarchar" MaxLength="128" />
+    <Property Name="ORDINAL_POSITION" Type="smallint" />
+    <Property Name="COLUMN_DEFAULT" Type="nvarchar" MaxLength="4000" />
+    <Property Name="IS_NULLABLE" Type="varchar" MaxLength="3" />
+    <Property Name="DATA_TYPE" Type="nvarchar" MaxLength="128" />
+    <Property Name="CHARACTER_MAXIMUM_LENGTH" Type="int" />
+    <Property Name="CHARACTER_OCTET_LENGTH" Type="int" />
+    <Property Name="NUMERIC_PRECISION" Type="tinyint" />
+    <Property Name="NUMERIC_PRECISION_RADIX" Type="smallint" />
+    <Property Name="NUMERIC_SCALE" Type="int" />
+    <Property Name="DATETIME_PRECISION" Type="smallint" />
+    <Property Name="CHARACTER_SET_CATALOG" Type="nvarchar" MaxLength="128" />
+    <Property Name="CHARACTER_SET_SCHEMA" Type="nvarchar" MaxLength="128" />
+    <Property Name="CHARACTER_SET_NAME" Type="nvarchar" MaxLength="128" />
+    <Property Name="COLLATION_CATALOG" Type="nvarchar" MaxLength="128" />
+    <Property Name="COLLATION_SCHEMA" Type="nvarchar" MaxLength="128" />
+    <Property Name="COLLATION_NAME" Type="nvarchar" MaxLength="128" />
+    <Property Name="DOMAIN_CATALOG" Type="nvarchar" MaxLength="128" />
+    <Property Name="DOMAIN_SCHEMA" Type="nvarchar" MaxLength="128" />
+    <Property Name="DOMAIN_NAME" Type="nvarchar" MaxLength="128" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JavaCode" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="StuChargebackFields">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StuID" Type="char" MaxLength="7" />
+    <Property Name="FirstName" Type="varchar" MaxLength="30" />
+    <Property Name="LastName" Type="varchar" MaxLength="60" />
+    <Property Name="ARCode" Type="varchar" MaxLength="5" />
+    <Property Name="AccountType" Type="varchar" MaxLength="3" />
+    <Property Name="TransDate" Type="varchar" MaxLength="12" />
+    <Property Name="Amount" Type="varchar" MaxLength="8" />
+    <Property Name="Invoice" Type="int" />
+    <Property Name="ChargeType" Type="int" />
+  </EntityType>
+  <EntityType Name="SummerGLChanges">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OldGL" Type="varchar" MaxLength="12" />
+    <Property Name="NewGL" Type="varchar" MaxLength="12" />
+    <Property Name="DateSubmitted" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TaxRates">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Rate" Type="decimal" Precision="8" Scale="6" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'eCommerce.dbo.Temp_Balance' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Temp_Balance">
+    <Key>
+      <PropertyRef Name="Balance" />
+    </Key>
+    <Property Name="Invoice" Type="int" />
+    <Property Name="Balance" Type="money" Nullable="false" />
+    <Property Name="DataDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'eCommerce.dbo.Temp_JavaTest' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Temp_JavaTest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="TABLE_CATALOG" Type="nvarchar" MaxLength="128" />
+    <Property Name="TABLE_SCHEMA" Type="nvarchar" MaxLength="128" />
+    <Property Name="TABLE_NAME" Type="nvarchar" MaxLength="128" />
+    <Property Name="COLUMN_NAME" Type="nvarchar" MaxLength="128" />
+    <Property Name="ORDINAL_POSITION" Type="smallint" />
+    <Property Name="COLUMN_DEFAULT" Type="nvarchar" MaxLength="4000" />
+    <Property Name="IS_NULLABLE" Type="varchar" MaxLength="3" />
+    <Property Name="DATA_TYPE" Type="nvarchar" MaxLength="128" />
+    <Property Name="CHARACTER_MAXIMUM_LENGTH" Type="int" />
+    <Property Name="CHARACTER_OCTET_LENGTH" Type="int" />
+    <Property Name="NUMERIC_PRECISION" Type="tinyint" />
+    <Property Name="NUMERIC_PRECISION_RADIX" Type="smallint" />
+    <Property Name="NUMERIC_SCALE" Type="int" />
+    <Property Name="DATETIME_PRECISION" Type="smallint" />
+    <Property Name="CHARACTER_SET_CATALOG" Type="nvarchar" MaxLength="128" />
+    <Property Name="CHARACTER_SET_SCHEMA" Type="nvarchar" MaxLength="128" />
+    <Property Name="CHARACTER_SET_NAME" Type="nvarchar" MaxLength="128" />
+    <Property Name="COLLATION_CATALOG" Type="nvarchar" MaxLength="128" />
+    <Property Name="COLLATION_SCHEMA" Type="nvarchar" MaxLength="128" />
+    <Property Name="COLLATION_NAME" Type="nvarchar" MaxLength="128" />
+    <Property Name="DOMAIN_CATALOG" Type="nvarchar" MaxLength="128" />
+    <Property Name="DOMAIN_SCHEMA" Type="nvarchar" MaxLength="128" />
+    <Property Name="DOMAIN_NAME" Type="nvarchar" MaxLength="128" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JavaCode" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="Trans_Status_Types">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WEB_Address">
+    <Key>
+      <PropertyRef Name="ADDR_ID" />
+    </Key>
+    <Property Name="ADDR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ZIP" Type="varchar" MaxLength="20" />
+    <Property Name="STATE" Type="varchar" MaxLength="5" />
+    <Property Name="CITY" Type="varchar" MaxLength="50" />
+    <Property Name="COUNTRY" Type="varchar" MaxLength="30" />
+    <Property Name="ADDRESS_LINES1" Type="varchar" MaxLength="50" />
+    <Property Name="ADDRESS_LINES2" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WEB_ChargeType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WEB_ControlEvaluationTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="WEB_CouponCodeTypes">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+    <Property Name="Code" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="EffectType" Type="varchar" MaxLength="50" />
+    <Property Name="EffectAmount" Type="float" />
+    <Property Name="MaxUse" Type="int" />
+    <Property Name="RequireWhitworthID" Type="int" />
+    <Property Name="Active" Type="int" />
+  </EntityType>
+  <EntityType Name="WEB_Customer">
+    <Key>
+      <PropertyRef Name="Customer_ID" />
+    </Key>
+    <Property Name="Customer_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LAST_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="FIRST_NAME" Type="varchar" MaxLength="30" />
+    <Property Name="MIDDLE_NAME" Type="varchar" MaxLength="30" />
+    <Property Name="PREFIX" Type="varchar" MaxLength="25" />
+    <Property Name="FULL_NAME" Type="varchar" MaxLength="300" />
+    <Property Name="ADDR_Id" Type="int" />
+    <Property Name="Email_Addr" Type="varchar" MaxLength="50" />
+    <Property Name="Phone_Number" Type="varchar" MaxLength="15" />
+    <Property Name="Phone_Ext" Type="varchar" MaxLength="12" />
+    <Property Name="Phone_Type" Type="varchar" MaxLength="10" />
+    <Property Name="Whit_ID" Type="char" MaxLength="7" />
+    <Property Name="Refund_ID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'eCommerce.dbo.WEB_CustomerUpdate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="WEB_CustomerUpdate">
+    <Key>
+      <PropertyRef Name="UpdateID" />
+    </Key>
+    <Property Name="Customer_ID" Type="int" />
+    <Property Name="LAST_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="FIRST_NAME" Type="varchar" MaxLength="30" />
+    <Property Name="MIDDLE_NAME" Type="varchar" MaxLength="30" />
+    <Property Name="PREFIX" Type="varchar" MaxLength="25" />
+    <Property Name="FULL_NAME" Type="varchar" MaxLength="300" />
+    <Property Name="ADDR_Id" Type="varchar" MaxLength="10" />
+    <Property Name="Email_Addr" Type="varchar" MaxLength="50" />
+    <Property Name="Phone_Number" Type="varchar" MaxLength="12" />
+    <Property Name="Phone_Ext" Type="varchar" MaxLength="10" />
+    <Property Name="Phone_Type" Type="varchar" MaxLength="10" />
+    <Property Name="UpdateID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'eCommerce.dbo.WEB_GLChanges' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="WEB_GLChanges">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Item_Amt" Type="float" />
+    <Property Name="Item_Action" Type="varchar" MaxLength="50" />
+    <Property Name="Item_GL" Type="varchar" MaxLength="20" />
+    <Property Name="Item_ID" Type="int" />
+    <Property Name="Date_Submitted" Type="datetime" />
+    <Property Name="Processed" Type="int" />
+    <Property Name="Date_Processed" Type="datetime" />
+  </EntityType>
+  <EntityType Name="WEB_Invoice_Items">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Invoice" Type="int" />
+    <Property Name="Set_Number" Type="int" />
+    <Property Name="Item_Type" Type="int" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Cost" Type="money" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Total" Type="money" />
+    <Property Name="SalesTax" Type="money" />
+    <Property Name="BOGoodsTax" Type="money" />
+    <Property Name="BOServicesTax" Type="money" />
+    <Property Name="Purchase_Date" Type="datetime" />
+    <Property Name="Process_Date" Type="datetime" />
+    <Property Name="Imported" Type="bit" />
+    <Property Name="Cancel" Type="bit" />
+    <Property Name="Cancel_Set" Type="int" />
+    <Property Name="Cancel_Date" Type="datetime" />
+    <Property Name="Cancel_Imported" Type="bit" />
+    <Property Name="Coupon_Code" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'eCommerce.dbo.WEB_Invoice_Items (old)' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="WEB_Invoice_Items (old)">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Invoice_NO" />
+      <PropertyRef Name="Item_Qty" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Invoice_NO" Type="int" Nullable="false" />
+    <Property Name="Item_Type" Type="int" />
+    <Property Name="Item_Qty" Type="int" Nullable="false" />
+    <Property Name="Item_Amt" Type="float" />
+    <Property Name="Payment_Type" Type="varchar" MaxLength="1" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Confirmation_Number" Type="varchar" MaxLength="50" />
+    <Property Name="Amt_Paid" Type="float" />
+    <Property Name="Paid_Date" Type="datetime" />
+    <Property Name="Imported" Type="int" />
+    <Property Name="Cancel_Date" Type="datetime" />
+    <Property Name="Cancel_Conf_Num" Type="varchar" MaxLength="50" />
+    <Property Name="Cancel_Imported" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'eCommerce.dbo.WEB_Invoice_ItemsBackup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="WEB_Invoice_ItemsBackup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Invoice" Type="int" />
+    <Property Name="Set_Number" Type="int" />
+    <Property Name="Item_Type" Type="int" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Cost" Type="money" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Total" Type="money" />
+    <Property Name="SalesTax" Type="money" />
+    <Property Name="BOGoodsTax" Type="money" />
+    <Property Name="BOServicesTax" Type="money" />
+    <Property Name="Purchase_Date" Type="datetime" />
+    <Property Name="Process_Date" Type="datetime" />
+    <Property Name="Imported" Type="bit" />
+    <Property Name="Cancel" Type="bit" />
+    <Property Name="Cancel_Set" Type="int" />
+    <Property Name="Cancel_Date" Type="datetime" />
+    <Property Name="Cancel_Imported" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'eCommerce.dbo.WEB_Invoice_ItemsCopy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="WEB_Invoice_ItemsCopy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Invoice" Type="int" />
+    <Property Name="Set_Number" Type="int" />
+    <Property Name="Item_Type" Type="int" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Cost" Type="money" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Total" Type="money" />
+    <Property Name="SalesTax" Type="money" />
+    <Property Name="BOGoodsTax" Type="money" />
+    <Property Name="BOServicesTax" Type="money" />
+    <Property Name="Purchase_Date" Type="datetime" />
+    <Property Name="Process_Date" Type="datetime" />
+    <Property Name="Imported" Type="bit" />
+    <Property Name="Cancel" Type="bit" />
+    <Property Name="Cancel_Set" Type="int" />
+    <Property Name="Cancel_Date" Type="datetime" />
+    <Property Name="Cancel_Imported" Type="bit" />
+    <Property Name="Coupon_Code" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="WEB_Invoices">
+    <Key>
+      <PropertyRef Name="Inv_NO" />
+    </Key>
+    <Property Name="Inv_NO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Inv_Customer_ID" Type="int" Nullable="false" />
+    <Property Name="Inv_TYPE" Type="int" />
+    <Property Name="Inv_DATE" Type="datetime" Nullable="false" />
+    <Property Name="Inv_Completed" Type="datetime" />
+    <Property Name="Inv_Final_Modify" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'eCommerce.dbo.WEB_Invoices_Archive' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="WEB_Invoices_Archive">
+    <Key>
+      <PropertyRef Name="Inv_NO" />
+      <PropertyRef Name="Inv_Customer_ID" />
+      <PropertyRef Name="Inv_DATE" />
+      <PropertyRef Name="Inv_Posted_Flag" />
+    </Key>
+    <Property Name="Inv_NO" Type="int" Nullable="false" />
+    <Property Name="Inv_Customer_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Inv_TYPE" Type="int" />
+    <Property Name="Inv_DATE" Type="datetime" Nullable="false" />
+    <Property Name="Inv_Posted_Flag" Type="bit" Nullable="false" />
+    <Property Name="Inv_Completed" Type="datetime" />
+    <Property Name="Inv_Payment_Type" Type="varchar" MaxLength="1" />
+    <Property Name="Inv_Active" Type="bit" />
+    <Property Name="Inv_Confirmation_Number" Type="varchar" MaxLength="50" />
+    <Property Name="Inv_Amt_Paid" Type="float" />
+    <Property Name="Inv_Paid" Type="int" />
+    <Property Name="Inv_Paid_Date" Type="datetime" />
+    <Property Name="Inv_Imported" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'eCommerce.dbo.Web_InvoiceSupervisors' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Web_InvoiceSupervisors">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvoiceType" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WEB_InvoiceType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" MaxLength="50" />
+    <Property Name="URL" Type="varchar" MaxLength="8000" />
+    <Property Name="FinalModifyDate" Type="datetime" />
+    <Property Name="ModifyTimeToExpiration" Type="int" />
+    <Property Name="AllowChanges" Type="int" />
+    <Property Name="AllowCancellation" Type="int" />
+    <Property Name="NotifyOnPayment" Type="bit" />
+  </EntityType>
+  <EntityType Name="WEB_ItemCouponCodes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemType" Type="int" />
+    <Property Name="CodeType" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'eCommerce.dbo.WEB_ItemTaxes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="WEB_ItemTaxes">
+    <Key>
+      <PropertyRef Name="ItemType" />
+      <PropertyRef Name="TaxType" />
+    </Key>
+    <Property Name="ItemType" Type="int" Nullable="false" />
+    <Property Name="TaxType" Type="int" Nullable="false" />
+    <Property Name="DebitGL" Type="char" MaxLength="12" />
+    <Property Name="CreditGL" Type="char" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="WEB_ItemType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvoiceType" Type="int" Nullable="false" />
+    <Property Name="ShortDescription" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="100" />
+    <Property Name="ChargeType" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Item_Amt" Type="float" />
+    <Property Name="Item_GL_Debit" Type="varchar" MaxLength="20" />
+    <Property Name="Control_Name" Type="varchar" MaxLength="50" />
+    <Property Name="ControlEvaluationType" Type="int" />
+    <Property Name="Item_AR_Code" Type="varchar" MaxLength="5" />
+    <Property Name="Item_Account_Type" Type="varchar" MaxLength="3" />
+    <Property Name="ShowOnBackend" Type="int" />
+    <Property Name="AmtVariable" Type="int" />
+  </EntityType>
+  <EntityType Name="WEB_ItemType_CreditGLs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemType" Type="int" />
+    <Property Name="CreditGL" Type="varchar" MaxLength="20" />
+    <Property Name="ChargeAmount" Type="int" />
+    <Property Name="DivisionType" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="WEB_Payments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Invoice" Type="int" />
+    <Property Name="Set_Number" Type="int" />
+    <Property Name="Total" Type="money" />
+    <Property Name="Type" Type="int" />
+    <Property Name="Confirmation_Number" Type="varchar" MaxLength="50" />
+    <Property Name="Paid_Date" Type="datetime" />
+    <Property Name="Payment_Processed" Type="char" MaxLength="1" />
+    <Property Name="Cancel_Conf_Number" Type="varchar" MaxLength="50" />
+    <Property Name="Cancel_Date" Type="datetime" />
+    <Property Name="Cancel_Processed" Type="char" MaxLength="1" />
+    <Property Name="Data_Date" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'eCommerce.dbo.WEB_PaymentsCopy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="WEB_PaymentsCopy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Invoice" Type="int" />
+    <Property Name="Set_Number" Type="int" />
+    <Property Name="Total" Type="money" />
+    <Property Name="Type" Type="int" />
+    <Property Name="Confirmation_Number" Type="varchar" MaxLength="50" />
+    <Property Name="Paid_Date" Type="datetime" />
+    <Property Name="Payment_Processed" Type="char" MaxLength="1" />
+    <Property Name="Cancel_Conf_Number" Type="varchar" MaxLength="50" />
+    <Property Name="Cancel_Date" Type="datetime" />
+    <Property Name="Cancel_Processed" Type="char" MaxLength="1" />
+    <Property Name="Data_Date" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'eCommerce.dbo.WEB_PhoneTypes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="WEB_PhoneTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WebTeamAdministrators">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'eCommerce.dbo.ActiveGLAccounts_v' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ActiveGLAccounts_v">
+    <Key>
+      <PropertyRef Name="GLNumber" />
+    </Key>
+    <Property Name="GLNumber" Type="varchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'eCommerce.dbo.Invoice_Totals_V' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Invoice_Totals_V">
+    <Key>
+      <PropertyRef Name="Total_Paid" />
+      <PropertyRef Name="Item_Total" />
+      <PropertyRef Name="Total_Refunds" />
+      <PropertyRef Name="Total_Unpaid_With_Conf" />
+      <PropertyRef Name="Total_Unpaid_Without_Conf" />
+    </Key>
+    <Property Name="Invoice" Type="int" />
+    <Property Name="Total_Paid" Type="money" Nullable="false" />
+    <Property Name="Item_Total" Type="money" Nullable="false" />
+    <Property Name="Total_Refunds" Type="money" Nullable="false" />
+    <Property Name="Total_Unpaid_With_Conf" Type="money" Nullable="false" />
+    <Property Name="Total_Unpaid_Without_Conf" Type="money" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'eCommerce.dbo.Invoice_Trans_Amounts_V' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Invoice_Trans_Amounts_V">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Invoice" Type="int" />
+    <Property Name="Set_Number" Type="int" />
+    <Property Name="Item_Type" Type="int" />
+    <Property Name="Total" Type="money" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'eCommerce.dbo.Items_Available_V' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Items_Available_V">
+    <Key>
+      <PropertyRef Name="Item_Type" />
+    </Key>
+    <Property Name="Item_Type" Type="int" Nullable="false" />
+    <Property Name="Available" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'eCommerce.dbo.WEB_ItemTaxes_V' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="WEB_ItemTaxes_V">
+    <Key>
+      <PropertyRef Name="ItemType" />
+    </Key>
+    <Property Name="ItemType" Type="int" Nullable="false" />
+    <Property Name="SalesTaxRate" Type="decimal" Precision="8" Scale="6" />
+    <Property Name="SalesDebitGL" Type="char" MaxLength="12" />
+    <Property Name="SalesCreditGL" Type="char" MaxLength="12" />
+    <Property Name="BOGoodsTaxRate" Type="decimal" Precision="8" Scale="6" />
+    <Property Name="BOGoodsDebitGL" Type="char" MaxLength="12" />
+    <Property Name="BOGoodsCreditGL" Type="char" MaxLength="12" />
+    <Property Name="BOServicesTaxRate" Type="decimal" Precision="8" Scale="6" />
+    <Property Name="BOServicesDebitGL" Type="char" MaxLength="12" />
+    <Property Name="BOServicesCreditGL" Type="char" MaxLength="12" />
+  </EntityType>
+  <Association Name="FK_WEB_Customer_WEB_Customer">
+    <End Role="WEB_Customer" Type="Self.WEB_Customer" Multiplicity="1" />
+    <End Role="WEB_Customer1" Type="Self.WEB_Customer" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="WEB_Customer">
+        <PropertyRef Name="Customer_ID" />
+      </Principal>
+      <Dependent Role="WEB_Customer1">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="eCommerceModelStoreContainer">
+    <EntitySet Name="ChargebackString" EntityType="Self.ChargebackString" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="D_Dates" EntityType="Self.D_Dates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dtproperties" EntityType="Self.dtproperties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="eCommerceImport" EntityType="Self.eCommerceImport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invoice_Trans" EntityType="Self.Invoice_Trans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment_Types" EntityType="Self.Payment_Types" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RemittanceDetail" EntityType="Self.RemittanceDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReturnedPaymentSupervisors" EntityType="Self.ReturnedPaymentSupervisors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SetNumbers" EntityType="Self.SetNumbers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SetReversals" EntityType="Self.SetReversals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StuChargebackFields" EntityType="Self.StuChargebackFields" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SummerGLChanges" EntityType="Self.SummerGLChanges" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaxRates" EntityType="Self.TaxRates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Trans_Status_Types" EntityType="Self.Trans_Status_Types" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WEB_Address" EntityType="Self.WEB_Address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WEB_ChargeType" EntityType="Self.WEB_ChargeType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WEB_ControlEvaluationTypes" EntityType="Self.WEB_ControlEvaluationTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WEB_CouponCodeTypes" EntityType="Self.WEB_CouponCodeTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WEB_Customer" EntityType="Self.WEB_Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WEB_Invoice_Items" EntityType="Self.WEB_Invoice_Items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WEB_Invoices" EntityType="Self.WEB_Invoices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WEB_InvoiceType" EntityType="Self.WEB_InvoiceType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WEB_ItemCouponCodes" EntityType="Self.WEB_ItemCouponCodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WEB_ItemType" EntityType="Self.WEB_ItemType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WEB_ItemType_CreditGLs" EntityType="Self.WEB_ItemType_CreditGLs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WEB_Payments" EntityType="Self.WEB_Payments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WebTeamAdministrators" EntityType="Self.WebTeamAdministrators" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChargebackStringFields" EntityType="Self.ChargebackStringFields" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ChargebackStringFields].[Invoice] AS [Invoice], 
+    [ChargebackStringFields].[DataDate] AS [DataDate], 
+    [ChargebackStringFields].[DebitGL] AS [DebitGL], 
+    [ChargebackStringFields].[CreditGL] AS [CreditGL], 
+    [ChargebackStringFields].[Amount] AS [Amount], 
+    [ChargebackStringFields].[Description] AS [Description]
+    FROM [dbo].[ChargebackStringFields] AS [ChargebackStringFields]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="eCommerceImportTestData" EntityType="Self.eCommerceImportTestData" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [eCommerceImportTestData].[ID] AS [ID], 
+    [eCommerceImportTestData].[RecordIndicator] AS [RecordIndicator], 
+    [eCommerceImportTestData].[TransactionConfirmationID] AS [TransactionConfirmationID], 
+    [eCommerceImportTestData].[BillerProductCode] AS [BillerProductCode], 
+    [eCommerceImportTestData].[AmountDue] AS [AmountDue], 
+    [eCommerceImportTestData].[PaymentAmount] AS [PaymentAmount], 
+    [eCommerceImportTestData].[ConvenienceFee] AS [ConvenienceFee], 
+    [eCommerceImportTestData].[TotalAmount] AS [TotalAmount], 
+    [eCommerceImportTestData].[PaymentEffectiveDate] AS [PaymentEffectiveDate], 
+    [eCommerceImportTestData].[InitiationDate] AS [InitiationDate], 
+    [eCommerceImportTestData].[PaymentType] AS [PaymentType], 
+    [eCommerceImportTestData].[PaymentAuthorization] AS [PaymentAuthorization], 
+    [eCommerceImportTestData].[PaymentStatus] AS [PaymentStatus], 
+    [eCommerceImportTestData].[ACHReturnCode] AS [ACHReturnCode], 
+    [eCommerceImportTestData].[ReasonDescription] AS [ReasonDescription], 
+    [eCommerceImportTestData].[ReturnDate] AS [ReturnDate], 
+    [eCommerceImportTestData].[AccessMethod] AS [AccessMethod], 
+    [eCommerceImportTestData].[UserID] AS [UserID], 
+    [eCommerceImportTestData].[FirstName] AS [FirstName], 
+    [eCommerceImportTestData].[LastName] AS [LastName], 
+    [eCommerceImportTestData].[CompanyName] AS [CompanyName], 
+    [eCommerceImportTestData].[Phone] AS [Phone], 
+    [eCommerceImportTestData].[StreetAddress1] AS [StreetAddress1], 
+    [eCommerceImportTestData].[StreetAddress2] AS [StreetAddress2], 
+    [eCommerceImportTestData].[City] AS [City], 
+    [eCommerceImportTestData].[StateCode] AS [StateCode], 
+    [eCommerceImportTestData].[ZipCode5] AS [ZipCode5], 
+    [eCommerceImportTestData].[ZipCode4] AS [ZipCode4], 
+    [eCommerceImportTestData].[Email] AS [Email], 
+    [eCommerceImportTestData].[Col029] AS [Col029], 
+    [eCommerceImportTestData].[DateSubmitted] AS [DateSubmitted], 
+    [eCommerceImportTestData].[Col031] AS [Col031], 
+    [eCommerceImportTestData].[ProductName] AS [ProductName], 
+    [eCommerceImportTestData].[Col033] AS [Col033], 
+    [eCommerceImportTestData].[TransactionKey] AS [TransactionKey]
+    FROM [dbo].[eCommerceImportTestData] AS [eCommerceImportTestData]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RemittanceDetailCopy" EntityType="Self.RemittanceDetailCopy" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RemittanceDetailCopy].[ID] AS [ID], 
+    [RemittanceDetailCopy].[DataDate] AS [DataDate], 
+    [RemittanceDetailCopy].[Completed] AS [Completed], 
+    [RemittanceDetailCopy].[RecordIndicator] AS [RecordIndicator], 
+    [RemittanceDetailCopy].[TransactionConfirmationID] AS [TransactionConfirmationID], 
+    [RemittanceDetailCopy].[BillerProductCode] AS [BillerProductCode], 
+    [RemittanceDetailCopy].[AmountDue] AS [AmountDue], 
+    [RemittanceDetailCopy].[PaymentAmount] AS [PaymentAmount], 
+    [RemittanceDetailCopy].[ConvenienceFee] AS [ConvenienceFee], 
+    [RemittanceDetailCopy].[TotalAmount] AS [TotalAmount], 
+    [RemittanceDetailCopy].[PaymentEffectiveDate] AS [PaymentEffectiveDate], 
+    [RemittanceDetailCopy].[InitiationDate] AS [InitiationDate], 
+    [RemittanceDetailCopy].[PaymentType] AS [PaymentType], 
+    [RemittanceDetailCopy].[PaymentAuthorization] AS [PaymentAuthorization], 
+    [RemittanceDetailCopy].[PaymentStatus] AS [PaymentStatus], 
+    [RemittanceDetailCopy].[ACHReturnCode] AS [ACHReturnCode], 
+    [RemittanceDetailCopy].[ReasonDescription] AS [ReasonDescription], 
+    [RemittanceDetailCopy].[ReturnDate] AS [ReturnDate], 
+    [RemittanceDetailCopy].[AccessMethod] AS [AccessMethod], 
+    [RemittanceDetailCopy].[UserID] AS [UserID], 
+    [RemittanceDetailCopy].[FirstName] AS [FirstName], 
+    [RemittanceDetailCopy].[LastName] AS [LastName], 
+    [RemittanceDetailCopy].[CompanyName] AS [CompanyName], 
+    [RemittanceDetailCopy].[Phone] AS [Phone], 
+    [RemittanceDetailCopy].[StreetAddress1] AS [StreetAddress1], 
+    [RemittanceDetailCopy].[StreetAddress2] AS [StreetAddress2], 
+    [RemittanceDetailCopy].[City] AS [City], 
+    [RemittanceDetailCopy].[StateCode] AS [StateCode], 
+    [RemittanceDetailCopy].[ZipCode5] AS [ZipCode5], 
+    [RemittanceDetailCopy].[ZipCode4] AS [ZipCode4], 
+    [RemittanceDetailCopy].[Email] AS [Email], 
+    [RemittanceDetailCopy].[DateSubmitted] AS [DateSubmitted], 
+    [RemittanceDetailCopy].[ProductName] AS [ProductName], 
+    [RemittanceDetailCopy].[TransactionKey] AS [TransactionKey]
+    FROM [dbo].[RemittanceDetailCopy] AS [RemittanceDetailCopy]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SQLInjection_Test" EntityType="Self.SQLInjection_Test" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SQLInjection_Test].[TABLE_CATALOG] AS [TABLE_CATALOG], 
+    [SQLInjection_Test].[TABLE_SCHEMA] AS [TABLE_SCHEMA], 
+    [SQLInjection_Test].[TABLE_NAME] AS [TABLE_NAME], 
+    [SQLInjection_Test].[COLUMN_NAME] AS [COLUMN_NAME], 
+    [SQLInjection_Test].[ORDINAL_POSITION] AS [ORDINAL_POSITION], 
+    [SQLInjection_Test].[COLUMN_DEFAULT] AS [COLUMN_DEFAULT], 
+    [SQLInjection_Test].[IS_NULLABLE] AS [IS_NULLABLE], 
+    [SQLInjection_Test].[DATA_TYPE] AS [DATA_TYPE], 
+    [SQLInjection_Test].[CHARACTER_MAXIMUM_LENGTH] AS [CHARACTER_MAXIMUM_LENGTH], 
+    [SQLInjection_Test].[CHARACTER_OCTET_LENGTH] AS [CHARACTER_OCTET_LENGTH], 
+    [SQLInjection_Test].[NUMERIC_PRECISION] AS [NUMERIC_PRECISION], 
+    [SQLInjection_Test].[NUMERIC_PRECISION_RADIX] AS [NUMERIC_PRECISION_RADIX], 
+    [SQLInjection_Test].[NUMERIC_SCALE] AS [NUMERIC_SCALE], 
+    [SQLInjection_Test].[DATETIME_PRECISION] AS [DATETIME_PRECISION], 
+    [SQLInjection_Test].[CHARACTER_SET_CATALOG] AS [CHARACTER_SET_CATALOG], 
+    [SQLInjection_Test].[CHARACTER_SET_SCHEMA] AS [CHARACTER_SET_SCHEMA], 
+    [SQLInjection_Test].[CHARACTER_SET_NAME] AS [CHARACTER_SET_NAME], 
+    [SQLInjection_Test].[COLLATION_CATALOG] AS [COLLATION_CATALOG], 
+    [SQLInjection_Test].[COLLATION_SCHEMA] AS [COLLATION_SCHEMA], 
+    [SQLInjection_Test].[COLLATION_NAME] AS [COLLATION_NAME], 
+    [SQLInjection_Test].[DOMAIN_CATALOG] AS [DOMAIN_CATALOG], 
+    [SQLInjection_Test].[DOMAIN_SCHEMA] AS [DOMAIN_SCHEMA], 
+    [SQLInjection_Test].[DOMAIN_NAME] AS [DOMAIN_NAME], 
+    [SQLInjection_Test].[Id] AS [Id], 
+    [SQLInjection_Test].[JavaCode] AS [JavaCode]
+    FROM [dbo].[SQLInjection_Test] AS [SQLInjection_Test]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Temp_Balance" EntityType="Self.Temp_Balance" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Temp_Balance].[Invoice] AS [Invoice], 
+    [Temp_Balance].[Balance] AS [Balance], 
+    [Temp_Balance].[DataDate] AS [DataDate]
+    FROM [dbo].[Temp_Balance] AS [Temp_Balance]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Temp_JavaTest" EntityType="Self.Temp_JavaTest" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Temp_JavaTest].[TABLE_CATALOG] AS [TABLE_CATALOG], 
+    [Temp_JavaTest].[TABLE_SCHEMA] AS [TABLE_SCHEMA], 
+    [Temp_JavaTest].[TABLE_NAME] AS [TABLE_NAME], 
+    [Temp_JavaTest].[COLUMN_NAME] AS [COLUMN_NAME], 
+    [Temp_JavaTest].[ORDINAL_POSITION] AS [ORDINAL_POSITION], 
+    [Temp_JavaTest].[COLUMN_DEFAULT] AS [COLUMN_DEFAULT], 
+    [Temp_JavaTest].[IS_NULLABLE] AS [IS_NULLABLE], 
+    [Temp_JavaTest].[DATA_TYPE] AS [DATA_TYPE], 
+    [Temp_JavaTest].[CHARACTER_MAXIMUM_LENGTH] AS [CHARACTER_MAXIMUM_LENGTH], 
+    [Temp_JavaTest].[CHARACTER_OCTET_LENGTH] AS [CHARACTER_OCTET_LENGTH], 
+    [Temp_JavaTest].[NUMERIC_PRECISION] AS [NUMERIC_PRECISION], 
+    [Temp_JavaTest].[NUMERIC_PRECISION_RADIX] AS [NUMERIC_PRECISION_RADIX], 
+    [Temp_JavaTest].[NUMERIC_SCALE] AS [NUMERIC_SCALE], 
+    [Temp_JavaTest].[DATETIME_PRECISION] AS [DATETIME_PRECISION], 
+    [Temp_JavaTest].[CHARACTER_SET_CATALOG] AS [CHARACTER_SET_CATALOG], 
+    [Temp_JavaTest].[CHARACTER_SET_SCHEMA] AS [CHARACTER_SET_SCHEMA], 
+    [Temp_JavaTest].[CHARACTER_SET_NAME] AS [CHARACTER_SET_NAME], 
+    [Temp_JavaTest].[COLLATION_CATALOG] AS [COLLATION_CATALOG], 
+    [Temp_JavaTest].[COLLATION_SCHEMA] AS [COLLATION_SCHEMA], 
+    [Temp_JavaTest].[COLLATION_NAME] AS [COLLATION_NAME], 
+    [Temp_JavaTest].[DOMAIN_CATALOG] AS [DOMAIN_CATALOG], 
+    [Temp_JavaTest].[DOMAIN_SCHEMA] AS [DOMAIN_SCHEMA], 
+    [Temp_JavaTest].[DOMAIN_NAME] AS [DOMAIN_NAME], 
+    [Temp_JavaTest].[Id] AS [Id], 
+    [Temp_JavaTest].[JavaCode] AS [JavaCode]
+    FROM [dbo].[Temp_JavaTest] AS [Temp_JavaTest]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="WEB_CustomerUpdate" EntityType="Self.WEB_CustomerUpdate" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [WEB_CustomerUpdate].[Customer_ID] AS [Customer_ID], 
+    [WEB_CustomerUpdate].[LAST_NAME] AS [LAST_NAME], 
+    [WEB_CustomerUpdate].[FIRST_NAME] AS [FIRST_NAME], 
+    [WEB_CustomerUpdate].[MIDDLE_NAME] AS [MIDDLE_NAME], 
+    [WEB_CustomerUpdate].[PREFIX] AS [PREFIX], 
+    [WEB_CustomerUpdate].[FULL_NAME] AS [FULL_NAME], 
+    [WEB_CustomerUpdate].[ADDR_Id] AS [ADDR_Id], 
+    [WEB_CustomerUpdate].[Email_Addr] AS [Email_Addr], 
+    [WEB_CustomerUpdate].[Phone_Number] AS [Phone_Number], 
+    [WEB_CustomerUpdate].[Phone_Ext] AS [Phone_Ext], 
+    [WEB_CustomerUpdate].[Phone_Type] AS [Phone_Type], 
+    [WEB_CustomerUpdate].[UpdateID] AS [UpdateID]
+    FROM [dbo].[WEB_CustomerUpdate] AS [WEB_CustomerUpdate]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="WEB_GLChanges" EntityType="Self.WEB_GLChanges" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [WEB_GLChanges].[ID] AS [ID], 
+    [WEB_GLChanges].[Item_Amt] AS [Item_Amt], 
+    [WEB_GLChanges].[Item_Action] AS [Item_Action], 
+    [WEB_GLChanges].[Item_GL] AS [Item_GL], 
+    [WEB_GLChanges].[Item_ID] AS [Item_ID], 
+    [WEB_GLChanges].[Date_Submitted] AS [Date_Submitted], 
+    [WEB_GLChanges].[Processed] AS [Processed], 
+    [WEB_GLChanges].[Date_Processed] AS [Date_Processed]
+    FROM [dbo].[WEB_GLChanges] AS [WEB_GLChanges]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="WEB_Invoice_Items (old)" EntityType="Self.WEB_Invoice_Items (old)" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [WEB_Invoice_Items (old)].[Id] AS [Id], 
+    [WEB_Invoice_Items (old)].[Invoice_NO] AS [Invoice_NO], 
+    [WEB_Invoice_Items (old)].[Item_Type] AS [Item_Type], 
+    [WEB_Invoice_Items (old)].[Item_Qty] AS [Item_Qty], 
+    [WEB_Invoice_Items (old)].[Item_Amt] AS [Item_Amt], 
+    [WEB_Invoice_Items (old)].[Payment_Type] AS [Payment_Type], 
+    [WEB_Invoice_Items (old)].[Active] AS [Active], 
+    [WEB_Invoice_Items (old)].[Confirmation_Number] AS [Confirmation_Number], 
+    [WEB_Invoice_Items (old)].[Amt_Paid] AS [Amt_Paid], 
+    [WEB_Invoice_Items (old)].[Paid_Date] AS [Paid_Date], 
+    [WEB_Invoice_Items (old)].[Imported] AS [Imported], 
+    [WEB_Invoice_Items (old)].[Cancel_Date] AS [Cancel_Date], 
+    [WEB_Invoice_Items (old)].[Cancel_Conf_Num] AS [Cancel_Conf_Num], 
+    [WEB_Invoice_Items (old)].[Cancel_Imported] AS [Cancel_Imported]
+    FROM [dbo].[WEB_Invoice_Items (old)] AS [WEB_Invoice_Items (old)]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="WEB_Invoice_ItemsBackup" EntityType="Self.WEB_Invoice_ItemsBackup" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [WEB_Invoice_ItemsBackup].[ID] AS [ID], 
+    [WEB_Invoice_ItemsBackup].[Invoice] AS [Invoice], 
+    [WEB_Invoice_ItemsBackup].[Set_Number] AS [Set_Number], 
+    [WEB_Invoice_ItemsBackup].[Item_Type] AS [Item_Type], 
+    [WEB_Invoice_ItemsBackup].[Active] AS [Active], 
+    [WEB_Invoice_ItemsBackup].[Cost] AS [Cost], 
+    [WEB_Invoice_ItemsBackup].[Quantity] AS [Quantity], 
+    [WEB_Invoice_ItemsBackup].[Total] AS [Total], 
+    [WEB_Invoice_ItemsBackup].[SalesTax] AS [SalesTax], 
+    [WEB_Invoice_ItemsBackup].[BOGoodsTax] AS [BOGoodsTax], 
+    [WEB_Invoice_ItemsBackup].[BOServicesTax] AS [BOServicesTax], 
+    [WEB_Invoice_ItemsBackup].[Purchase_Date] AS [Purchase_Date], 
+    [WEB_Invoice_ItemsBackup].[Process_Date] AS [Process_Date], 
+    [WEB_Invoice_ItemsBackup].[Imported] AS [Imported], 
+    [WEB_Invoice_ItemsBackup].[Cancel] AS [Cancel], 
+    [WEB_Invoice_ItemsBackup].[Cancel_Set] AS [Cancel_Set], 
+    [WEB_Invoice_ItemsBackup].[Cancel_Date] AS [Cancel_Date], 
+    [WEB_Invoice_ItemsBackup].[Cancel_Imported] AS [Cancel_Imported]
+    FROM [dbo].[WEB_Invoice_ItemsBackup] AS [WEB_Invoice_ItemsBackup]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="WEB_Invoice_ItemsCopy" EntityType="Self.WEB_Invoice_ItemsCopy" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [WEB_Invoice_ItemsCopy].[ID] AS [ID], 
+    [WEB_Invoice_ItemsCopy].[Invoice] AS [Invoice], 
+    [WEB_Invoice_ItemsCopy].[Set_Number] AS [Set_Number], 
+    [WEB_Invoice_ItemsCopy].[Item_Type] AS [Item_Type], 
+    [WEB_Invoice_ItemsCopy].[Active] AS [Active], 
+    [WEB_Invoice_ItemsCopy].[Cost] AS [Cost], 
+    [WEB_Invoice_ItemsCopy].[Quantity] AS [Quantity], 
+    [WEB_Invoice_ItemsCopy].[Total] AS [Total], 
+    [WEB_Invoice_ItemsCopy].[SalesTax] AS [SalesTax], 
+    [WEB_Invoice_ItemsCopy].[BOGoodsTax] AS [BOGoodsTax], 
+    [WEB_Invoice_ItemsCopy].[BOServicesTax] AS [BOServicesTax], 
+    [WEB_Invoice_ItemsCopy].[Purchase_Date] AS [Purchase_Date], 
+    [WEB_Invoice_ItemsCopy].[Process_Date] AS [Process_Date], 
+    [WEB_Invoice_ItemsCopy].[Imported] AS [Imported], 
+    [WEB_Invoice_ItemsCopy].[Cancel] AS [Cancel], 
+    [WEB_Invoice_ItemsCopy].[Cancel_Set] AS [Cancel_Set], 
+    [WEB_Invoice_ItemsCopy].[Cancel_Date] AS [Cancel_Date], 
+    [WEB_Invoice_ItemsCopy].[Cancel_Imported] AS [Cancel_Imported], 
+    [WEB_Invoice_ItemsCopy].[Coupon_Code] AS [Coupon_Code]
+    FROM [dbo].[WEB_Invoice_ItemsCopy] AS [WEB_Invoice_ItemsCopy]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="WEB_Invoices_Archive" EntityType="Self.WEB_Invoices_Archive" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [WEB_Invoices_Archive].[Inv_NO] AS [Inv_NO], 
+    [WEB_Invoices_Archive].[Inv_Customer_ID] AS [Inv_Customer_ID], 
+    [WEB_Invoices_Archive].[Inv_TYPE] AS [Inv_TYPE], 
+    [WEB_Invoices_Archive].[Inv_DATE] AS [Inv_DATE], 
+    [WEB_Invoices_Archive].[Inv_Posted_Flag] AS [Inv_Posted_Flag], 
+    [WEB_Invoices_Archive].[Inv_Completed] AS [Inv_Completed], 
+    [WEB_Invoices_Archive].[Inv_Payment_Type] AS [Inv_Payment_Type], 
+    [WEB_Invoices_Archive].[Inv_Active] AS [Inv_Active], 
+    [WEB_Invoices_Archive].[Inv_Confirmation_Number] AS [Inv_Confirmation_Number], 
+    [WEB_Invoices_Archive].[Inv_Amt_Paid] AS [Inv_Amt_Paid], 
+    [WEB_Invoices_Archive].[Inv_Paid] AS [Inv_Paid], 
+    [WEB_Invoices_Archive].[Inv_Paid_Date] AS [Inv_Paid_Date], 
+    [WEB_Invoices_Archive].[Inv_Imported] AS [Inv_Imported]
+    FROM [dbo].[WEB_Invoices_Archive] AS [WEB_Invoices_Archive]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Web_InvoiceSupervisors" EntityType="Self.Web_InvoiceSupervisors" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Web_InvoiceSupervisors].[ID] AS [ID], 
+    [Web_InvoiceSupervisors].[InvoiceType] AS [InvoiceType], 
+    [Web_InvoiceSupervisors].[Name] AS [Name], 
+    [Web_InvoiceSupervisors].[Email] AS [Email]
+    FROM [dbo].[Web_InvoiceSupervisors] AS [Web_InvoiceSupervisors]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="WEB_ItemTaxes" EntityType="Self.WEB_ItemTaxes" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [WEB_ItemTaxes].[ItemType] AS [ItemType], 
+    [WEB_ItemTaxes].[TaxType] AS [TaxType], 
+    [WEB_ItemTaxes].[DebitGL] AS [DebitGL], 
+    [WEB_ItemTaxes].[CreditGL] AS [CreditGL]
+    FROM [dbo].[WEB_ItemTaxes] AS [WEB_ItemTaxes]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="WEB_PaymentsCopy" EntityType="Self.WEB_PaymentsCopy" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [WEB_PaymentsCopy].[ID] AS [ID], 
+    [WEB_PaymentsCopy].[Invoice] AS [Invoice], 
+    [WEB_PaymentsCopy].[Set_Number] AS [Set_Number], 
+    [WEB_PaymentsCopy].[Total] AS [Total], 
+    [WEB_PaymentsCopy].[Type] AS [Type], 
+    [WEB_PaymentsCopy].[Confirmation_Number] AS [Confirmation_Number], 
+    [WEB_PaymentsCopy].[Paid_Date] AS [Paid_Date], 
+    [WEB_PaymentsCopy].[Payment_Processed] AS [Payment_Processed], 
+    [WEB_PaymentsCopy].[Cancel_Conf_Number] AS [Cancel_Conf_Number], 
+    [WEB_PaymentsCopy].[Cancel_Date] AS [Cancel_Date], 
+    [WEB_PaymentsCopy].[Cancel_Processed] AS [Cancel_Processed], 
+    [WEB_PaymentsCopy].[Data_Date] AS [Data_Date]
+    FROM [dbo].[WEB_PaymentsCopy] AS [WEB_PaymentsCopy]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="WEB_PhoneTypes" EntityType="Self.WEB_PhoneTypes" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [WEB_PhoneTypes].[Id] AS [Id], 
+    [WEB_PhoneTypes].[Description] AS [Description]
+    FROM [dbo].[WEB_PhoneTypes] AS [WEB_PhoneTypes]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ActiveGLAccounts_v" EntityType="Self.ActiveGLAccounts_v" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ActiveGLAccounts_v].[GLNumber] AS [GLNumber]
+    FROM [dbo].[ActiveGLAccounts_v] AS [ActiveGLAccounts_v]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Invoice_Totals_V" EntityType="Self.Invoice_Totals_V" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Invoice_Totals_V].[Invoice] AS [Invoice], 
+    [Invoice_Totals_V].[Total_Paid] AS [Total_Paid], 
+    [Invoice_Totals_V].[Item_Total] AS [Item_Total], 
+    [Invoice_Totals_V].[Total_Refunds] AS [Total_Refunds], 
+    [Invoice_Totals_V].[Total_Unpaid_With_Conf] AS [Total_Unpaid_With_Conf], 
+    [Invoice_Totals_V].[Total_Unpaid_Without_Conf] AS [Total_Unpaid_Without_Conf]
+    FROM [dbo].[Invoice_Totals_V] AS [Invoice_Totals_V]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Invoice_Trans_Amounts_V" EntityType="Self.Invoice_Trans_Amounts_V" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Invoice_Trans_Amounts_V].[ID] AS [ID], 
+    [Invoice_Trans_Amounts_V].[Invoice] AS [Invoice], 
+    [Invoice_Trans_Amounts_V].[Set_Number] AS [Set_Number], 
+    [Invoice_Trans_Amounts_V].[Item_Type] AS [Item_Type], 
+    [Invoice_Trans_Amounts_V].[Total] AS [Total]
+    FROM [dbo].[Invoice_Trans_Amounts_V] AS [Invoice_Trans_Amounts_V]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Items_Available_V" EntityType="Self.Items_Available_V" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Items_Available_V].[Item_Type] AS [Item_Type], 
+    [Items_Available_V].[Available] AS [Available]
+    FROM [dbo].[Items_Available_V] AS [Items_Available_V]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="WEB_ItemTaxes_V" EntityType="Self.WEB_ItemTaxes_V" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [WEB_ItemTaxes_V].[ItemType] AS [ItemType], 
+    [WEB_ItemTaxes_V].[SalesTaxRate] AS [SalesTaxRate], 
+    [WEB_ItemTaxes_V].[SalesDebitGL] AS [SalesDebitGL], 
+    [WEB_ItemTaxes_V].[SalesCreditGL] AS [SalesCreditGL], 
+    [WEB_ItemTaxes_V].[BOGoodsTaxRate] AS [BOGoodsTaxRate], 
+    [WEB_ItemTaxes_V].[BOGoodsDebitGL] AS [BOGoodsDebitGL], 
+    [WEB_ItemTaxes_V].[BOGoodsCreditGL] AS [BOGoodsCreditGL], 
+    [WEB_ItemTaxes_V].[BOServicesTaxRate] AS [BOServicesTaxRate], 
+    [WEB_ItemTaxes_V].[BOServicesDebitGL] AS [BOServicesDebitGL], 
+    [WEB_ItemTaxes_V].[BOServicesCreditGL] AS [BOServicesCreditGL]
+    FROM [dbo].[WEB_ItemTaxes_V] AS [WEB_ItemTaxes_V]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_WEB_Customer_WEB_Customer" Association="Self.FK_WEB_Customer_WEB_Customer">
+      <End Role="WEB_Customer" EntitySet="WEB_Customer" />
+      <End Role="WEB_Customer1" EntitySet="WEB_Customer" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

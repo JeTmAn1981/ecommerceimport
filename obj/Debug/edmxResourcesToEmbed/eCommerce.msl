@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="eCommerceModelStoreContainer" CdmEntityContainer="eCommerceEntities">
+    <EntitySetMapping Name="RemittanceDetails">
+      <EntityTypeMapping TypeName="eCommerceModel.RemittanceDetail">
+        <MappingFragment StoreEntitySet="RemittanceDetail">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DataDate" ColumnName="DataDate" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+          <ScalarProperty Name="RecordIndicator" ColumnName="RecordIndicator" />
+          <ScalarProperty Name="TransactionConfirmationID" ColumnName="TransactionConfirmationID" />
+          <ScalarProperty Name="BillerProductCode" ColumnName="BillerProductCode" />
+          <ScalarProperty Name="AmountDue" ColumnName="AmountDue" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="ConvenienceFee" ColumnName="ConvenienceFee" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="PaymentEffectiveDate" ColumnName="PaymentEffectiveDate" />
+          <ScalarProperty Name="InitiationDate" ColumnName="InitiationDate" />
+          <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+          <ScalarProperty Name="PaymentAuthorization" ColumnName="PaymentAuthorization" />
+          <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+          <ScalarProperty Name="ACHReturnCode" ColumnName="ACHReturnCode" />
+          <ScalarProperty Name="ReasonDescription" ColumnName="ReasonDescription" />
+          <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+          <ScalarProperty Name="AccessMethod" ColumnName="AccessMethod" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="StreetAddress1" ColumnName="StreetAddress1" />
+          <ScalarProperty Name="StreetAddress2" ColumnName="StreetAddress2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="ZipCode5" ColumnName="ZipCode5" />
+          <ScalarProperty Name="ZipCode4" ColumnName="ZipCode4" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DateSubmitted" ColumnName="DateSubmitted" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="TransactionKey" ColumnName="TransactionKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SetNumbers">
+      <EntityTypeMapping TypeName="eCommerceModel.SetNumber">
+        <MappingFragment StoreEntitySet="SetNumbers">
+          <ScalarProperty Name="Set_Number" ColumnName="Set_Number" />
+          <ScalarProperty Name="Invoice" ColumnName="Invoice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SetReversals">
+      <EntityTypeMapping TypeName="eCommerceModel.SetReversal">
+        <MappingFragment StoreEntitySet="SetReversals">
+          <ScalarProperty Name="Set_Number" ColumnName="Set_Number" />
+          <ScalarProperty Name="Invoice" ColumnName="Invoice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WEB_Address">
+      <EntityTypeMapping TypeName="eCommerceModel.WEB_Address">
+        <MappingFragment StoreEntitySet="WEB_Address">
+          <ScalarProperty Name="ADDR_ID" ColumnName="ADDR_ID" />
+          <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="ADDRESS_LINES1" ColumnName="ADDRESS_LINES1" />
+          <ScalarProperty Name="ADDRESS_LINES2" ColumnName="ADDRESS_LINES2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WEB_ChargeType">
+      <EntityTypeMapping TypeName="eCommerceModel.WEB_ChargeType">
+        <MappingFragment StoreEntitySet="WEB_ChargeType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WEB_CouponCodeTypes">
+      <EntityTypeMapping TypeName="eCommerceModel.WEB_CouponCodeTypes">
+        <MappingFragment StoreEntitySet="WEB_CouponCodeTypes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="EffectType" ColumnName="EffectType" />
+          <ScalarProperty Name="EffectAmount" ColumnName="EffectAmount" />
+          <ScalarProperty Name="MaxUse" ColumnName="MaxUse" />
+          <ScalarProperty Name="RequireWhitworthID" ColumnName="RequireWhitworthID" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WEB_Customer">
+      <EntityTypeMapping TypeName="eCommerceModel.WEB_Customer">
+        <MappingFragment StoreEntitySet="WEB_Customer">
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="MIDDLE_NAME" ColumnName="MIDDLE_NAME" />
+          <ScalarProperty Name="PREFIX" ColumnName="PREFIX" />
+          <ScalarProperty Name="FULL_NAME" ColumnName="FULL_NAME" />
+          <ScalarProperty Name="ADDR_Id" ColumnName="ADDR_Id" />
+          <ScalarProperty Name="Email_Addr" ColumnName="Email_Addr" />
+          <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
+          <ScalarProperty Name="Phone_Ext" ColumnName="Phone_Ext" />
+          <ScalarProperty Name="Phone_Type" ColumnName="Phone_Type" />
+          <ScalarProperty Name="Whit_ID" ColumnName="Whit_ID" />
+          <ScalarProperty Name="Refund_ID" ColumnName="Refund_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WEB_Invoice_Items">
+      <EntityTypeMapping TypeName="eCommerceModel.WEB_Invoice_Items">
+        <MappingFragment StoreEntitySet="WEB_Invoice_Items">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Invoice" ColumnName="Invoice" />
+          <ScalarProperty Name="Set_Number" ColumnName="Set_Number" />
+          <ScalarProperty Name="Item_Type" ColumnName="Item_Type" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="BOGoodsTax" ColumnName="BOGoodsTax" />
+          <ScalarProperty Name="BOServicesTax" ColumnName="BOServicesTax" />
+          <ScalarProperty Name="Purchase_Date" ColumnName="Purchase_Date" />
+          <ScalarProperty Name="Process_Date" ColumnName="Process_Date" />
+          <ScalarProperty Name="Imported" ColumnName="Imported" />
+          <ScalarProperty Name="Cancel" ColumnName="Cancel" />
+          <ScalarProperty Name="Cancel_Set" ColumnName="Cancel_Set" />
+          <ScalarProperty Name="Cancel_Date" ColumnName="Cancel_Date" />
+          <ScalarProperty Name="Cancel_Imported" ColumnName="Cancel_Imported" />
+          <ScalarProperty Name="Coupon_Code" ColumnName="Coupon_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WEB_Invoices">
+      <EntityTypeMapping TypeName="eCommerceModel.WEB_Invoices">
+        <MappingFragment StoreEntitySet="WEB_Invoices">
+          <ScalarProperty Name="Inv_NO" ColumnName="Inv_NO" />
+          <ScalarProperty Name="Inv_Customer_ID" ColumnName="Inv_Customer_ID" />
+          <ScalarProperty Name="Inv_TYPE" ColumnName="Inv_TYPE" />
+          <ScalarProperty Name="Inv_DATE" ColumnName="Inv_DATE" />
+          <ScalarProperty Name="Inv_Completed" ColumnName="Inv_Completed" />
+          <ScalarProperty Name="Inv_Final_Modify" ColumnName="Inv_Final_Modify" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WEB_InvoiceType">
+      <EntityTypeMapping TypeName="eCommerceModel.WEB_InvoiceType">
+        <MappingFragment StoreEntitySet="WEB_InvoiceType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="FinalModifyDate" ColumnName="FinalModifyDate" />
+          <ScalarProperty Name="ModifyTimeToExpiration" ColumnName="ModifyTimeToExpiration" />
+          <ScalarProperty Name="AllowChanges" ColumnName="AllowChanges" />
+          <ScalarProperty Name="AllowCancellation" ColumnName="AllowCancellation" />
+          <ScalarProperty Name="NotifyOnPayment" ColumnName="NotifyOnPayment" />
+          <ScalarProperty Name="PreviousPaymentRequiredForRefund" ColumnName="PreviousPaymentRequiredForRefund" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WEB_ItemCouponCodes">
+      <EntityTypeMapping TypeName="eCommerceModel.WEB_ItemCouponCodes">
+        <MappingFragment StoreEntitySet="WEB_ItemCouponCodes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+          <ScalarProperty Name="CodeType" ColumnName="CodeType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WEB_ItemType">
+      <EntityTypeMapping TypeName="eCommerceModel.WEB_ItemType">
+        <MappingFragment StoreEntitySet="WEB_ItemType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="InvoiceType" ColumnName="InvoiceType" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ChargeType" ColumnName="ChargeType" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Item_Amt" ColumnName="Item_Amt" />
+          <ScalarProperty Name="Item_GL_Debit" ColumnName="Item_GL_Debit" />
+          <ScalarProperty Name="Control_Name" ColumnName="Control_Name" />
+          <ScalarProperty Name="ControlEvaluationType" ColumnName="ControlEvaluationType" />
+          <ScalarProperty Name="Item_AR_Code" ColumnName="Item_AR_Code" />
+          <ScalarProperty Name="Item_Account_Type" ColumnName="Item_Account_Type" />
+          <ScalarProperty Name="ShowOnBackend" ColumnName="ShowOnBackend" />
+          <ScalarProperty Name="AmtVariable" ColumnName="AmtVariable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WEB_ItemType_CreditGLs">
+      <EntityTypeMapping TypeName="eCommerceModel.WEB_ItemType_CreditGLs">
+        <MappingFragment StoreEntitySet="WEB_ItemType_CreditGLs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+          <ScalarProperty Name="CreditGL" ColumnName="CreditGL" />
+          <ScalarProperty Name="ChargeAmount" ColumnName="ChargeAmount" />
+          <ScalarProperty Name="DivisionType" ColumnName="DivisionType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WEB_Payments">
+      <EntityTypeMapping TypeName="eCommerceModel.WEB_Payments">
+        <MappingFragment StoreEntitySet="WEB_Payments">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Invoice" ColumnName="Invoice" />
+          <ScalarProperty Name="Set_Number" ColumnName="Set_Number" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Confirmation_Number" ColumnName="Confirmation_Number" />
+          <ScalarProperty Name="Paid_Date" ColumnName="Paid_Date" />
+          <ScalarProperty Name="Payment_Processed" ColumnName="Payment_Processed" />
+          <ScalarProperty Name="Cancel_Conf_Number" ColumnName="Cancel_Conf_Number" />
+          <ScalarProperty Name="Cancel_Date" ColumnName="Cancel_Date" />
+          <ScalarProperty Name="Cancel_Processed" ColumnName="Cancel_Processed" />
+          <ScalarProperty Name="Data_Date" ColumnName="Data_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Web_InvoiceSupervisors">
+      <EntityTypeMapping TypeName="eCommerceModel.Web_InvoiceSupervisors">
+        <MappingFragment StoreEntitySet="Web_InvoiceSupervisors">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="InvoiceType" ColumnName="InvoiceType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WEB_ItemTaxes">
+      <EntityTypeMapping TypeName="eCommerceModel.WEB_ItemTaxes">
+        <MappingFragment StoreEntitySet="WEB_ItemTaxes">
+          <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+          <ScalarProperty Name="TaxType" ColumnName="TaxType" />
+          <ScalarProperty Name="DebitGL" ColumnName="DebitGL" />
+          <ScalarProperty Name="CreditGL" ColumnName="CreditGL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WEB_ItemTaxes_V">
+      <EntityTypeMapping TypeName="eCommerceModel.WEB_ItemTaxes_V">
+        <MappingFragment StoreEntitySet="WEB_ItemTaxes_V">
+          <ScalarProperty Name="BOServicesCreditGL" ColumnName="BOServicesCreditGL" />
+          <ScalarProperty Name="BOServicesDebitGL" ColumnName="BOServicesDebitGL" />
+          <ScalarProperty Name="BOServicesTaxRate" ColumnName="BOServicesTaxRate" />
+          <ScalarProperty Name="BOGoodsCreditGL" ColumnName="BOGoodsCreditGL" />
+          <ScalarProperty Name="BOGoodsDebitGL" ColumnName="BOGoodsDebitGL" />
+          <ScalarProperty Name="BOGoodsTaxRate" ColumnName="BOGoodsTaxRate" />
+          <ScalarProperty Name="SalesCreditGL" ColumnName="SalesCreditGL" />
+          <ScalarProperty Name="SalesDebitGL" ColumnName="SalesDebitGL" />
+          <ScalarProperty Name="SalesTaxRate" ColumnName="SalesTaxRate" />
+          <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

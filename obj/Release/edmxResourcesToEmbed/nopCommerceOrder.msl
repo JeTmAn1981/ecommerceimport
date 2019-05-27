@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="nopCommerceModelStoreContainer" CdmEntityContainer="nopCommerceEntities">
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="nopCommerceModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrderGuid" ColumnName="OrderGuid" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="BillingAddressId" ColumnName="BillingAddressId" />
+          <ScalarProperty Name="ShippingAddressId" ColumnName="ShippingAddressId" />
+          <ScalarProperty Name="PickUpInStore" ColumnName="PickUpInStore" />
+          <ScalarProperty Name="OrderStatusId" ColumnName="OrderStatusId" />
+          <ScalarProperty Name="ShippingStatusId" ColumnName="ShippingStatusId" />
+          <ScalarProperty Name="PaymentStatusId" ColumnName="PaymentStatusId" />
+          <ScalarProperty Name="PaymentMethodSystemName" ColumnName="PaymentMethodSystemName" />
+          <ScalarProperty Name="CustomerCurrencyCode" ColumnName="CustomerCurrencyCode" />
+          <ScalarProperty Name="CurrencyRate" ColumnName="CurrencyRate" />
+          <ScalarProperty Name="CustomerTaxDisplayTypeId" ColumnName="CustomerTaxDisplayTypeId" />
+          <ScalarProperty Name="VatNumber" ColumnName="VatNumber" />
+          <ScalarProperty Name="OrderSubtotalInclTax" ColumnName="OrderSubtotalInclTax" />
+          <ScalarProperty Name="OrderSubtotalExclTax" ColumnName="OrderSubtotalExclTax" />
+          <ScalarProperty Name="OrderSubTotalDiscountInclTax" ColumnName="OrderSubTotalDiscountInclTax" />
+          <ScalarProperty Name="OrderSubTotalDiscountExclTax" ColumnName="OrderSubTotalDiscountExclTax" />
+          <ScalarProperty Name="OrderShippingInclTax" ColumnName="OrderShippingInclTax" />
+          <ScalarProperty Name="OrderShippingExclTax" ColumnName="OrderShippingExclTax" />
+          <ScalarProperty Name="PaymentMethodAdditionalFeeInclTax" ColumnName="PaymentMethodAdditionalFeeInclTax" />
+          <ScalarProperty Name="PaymentMethodAdditionalFeeExclTax" ColumnName="PaymentMethodAdditionalFeeExclTax" />
+          <ScalarProperty Name="TaxRates" ColumnName="TaxRates" />
+          <ScalarProperty Name="OrderTax" ColumnName="OrderTax" />
+          <ScalarProperty Name="OrderDiscount" ColumnName="OrderDiscount" />
+          <ScalarProperty Name="OrderTotal" ColumnName="OrderTotal" />
+          <ScalarProperty Name="RefundedAmount" ColumnName="RefundedAmount" />
+          <ScalarProperty Name="RewardPointsWereAdded" ColumnName="RewardPointsWereAdded" />
+          <ScalarProperty Name="CheckoutAttributeDescription" ColumnName="CheckoutAttributeDescription" />
+          <ScalarProperty Name="CheckoutAttributesXml" ColumnName="CheckoutAttributesXml" />
+          <ScalarProperty Name="CustomerLanguageId" ColumnName="CustomerLanguageId" />
+          <ScalarProperty Name="AffiliateId" ColumnName="AffiliateId" />
+          <ScalarProperty Name="CustomerIp" ColumnName="CustomerIp" />
+          <ScalarProperty Name="AllowStoringCreditCardNumber" ColumnName="AllowStoringCreditCardNumber" />
+          <ScalarProperty Name="CardType" ColumnName="CardType" />
+          <ScalarProperty Name="CardName" ColumnName="CardName" />
+          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+          <ScalarProperty Name="MaskedCreditCardNumber" ColumnName="MaskedCreditCardNumber" />
+          <ScalarProperty Name="CardCvv2" ColumnName="CardCvv2" />
+          <ScalarProperty Name="CardExpirationMonth" ColumnName="CardExpirationMonth" />
+          <ScalarProperty Name="CardExpirationYear" ColumnName="CardExpirationYear" />
+          <ScalarProperty Name="AuthorizationTransactionId" ColumnName="AuthorizationTransactionId" />
+          <ScalarProperty Name="AuthorizationTransactionCode" ColumnName="AuthorizationTransactionCode" />
+          <ScalarProperty Name="AuthorizationTransactionResult" ColumnName="AuthorizationTransactionResult" />
+          <ScalarProperty Name="CaptureTransactionId" ColumnName="CaptureTransactionId" />
+          <ScalarProperty Name="CaptureTransactionResult" ColumnName="CaptureTransactionResult" />
+          <ScalarProperty Name="SubscriptionTransactionId" ColumnName="SubscriptionTransactionId" />
+          <ScalarProperty Name="PaidDateUtc" ColumnName="PaidDateUtc" />
+          <ScalarProperty Name="ShippingMethod" ColumnName="ShippingMethod" />
+          <ScalarProperty Name="ShippingRateComputationMethodSystemName" ColumnName="ShippingRateComputationMethodSystemName" />
+          <ScalarProperty Name="CustomValuesXml" ColumnName="CustomValuesXml" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreatedOnUtc" ColumnName="CreatedOnUtc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderUSBankTransactionKeys">
+      <EntityTypeMapping TypeName="nopCommerceModel.OrderUSBankTransactionKey">
+        <MappingFragment StoreEntitySet="OrderUSBankTransactionKeys">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="TransactionKey" ColumnName="TransactionKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

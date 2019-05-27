@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="80588d29195942fda8da55bb9ee09ce1" Name="Diagram1">
+        <EntityTypeShape EntityType="eCommerceModel.Administrator" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.ARCodeType" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.dtproperty" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.Invoice_Trans" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.Payment_Types" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.RemittanceDetail" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.SetNumber" Width="1.5" PointX="5.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.SetReversal" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.SlateDetailGLNumber" Width="1.5" PointX="5.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.SlateDetail" Width="1.5" PointX="8" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.SummerGLChanx" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.sysdiagram" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.TaxRate" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.Trans_Status_Types" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.WEB_Address" Width="1.5" PointX="1.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.WEB_ChargeType" Width="1.5" PointX="10.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.WEB_ControlEvaluationTypes" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.WEB_CouponCodeTypes" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.WEB_Customer" Width="1.5" PointX="3.5" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.WEB_Invoice_Items" Width="1.5" PointX="8" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.WEB_Invoices" Width="1.5" PointX="5.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.WEB_InvoiceType" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.WEB_ItemCouponCodes" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.WEB_ItemType" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.WEB_ItemType_CreditGLs" Width="1.5" PointX="5.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.WEB_Payments" Width="1.5" PointX="8" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.WebTeamAdministrator" Width="1.5" PointX="14.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.WEB_CustomerUpdate" Width="1.5" PointX="14.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.WEB_GLChanges" Width="1.5" PointX="10.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.WEB_Invoices_Archive" Width="1.5" PointX="12.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.Web_InvoiceSupervisors" Width="1.5" PointX="14.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.WEB_ItemTaxes" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.WEB_PhoneTypes" Width="1.5" PointX="0.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.ActiveGLAccounts_v" Width="1.5" PointX="2.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.Invoice_Totals_V" Width="1.5" PointX="16.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.Invoice_Trans_Amounts_V" Width="1.5" PointX="16.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.Items_Available_V" Width="1.5" PointX="16.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eCommerceModel.WEB_ItemTaxes_V" Width="1.5" PointX="16.75" PointY="12.75" IsExpanded="true" />
+        <AssociationConnector Association="eCommerceModel.FK_SlateDetails_SetNumbers" ManuallyRouted="false" />
+        <AssociationConnector Association="eCommerceModel.FK_SlateDetails_SlateDetailGLNumbers" ManuallyRouted="false" />
+        <AssociationConnector Association="eCommerceModel.FK_SlateDetails_SlateDetailGLNumbers1" ManuallyRouted="false" />
+        <AssociationConnector Association="eCommerceModel.FK_SlateDetails_WEB_Invoices" ManuallyRouted="false" />
+        <AssociationConnector Association="eCommerceModel.FK_WEB_Address_WEB_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="eCommerceModel.FK_WEB_Customer_WEB_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="eCommerceModel.FK_WEB_Customer_WEB_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="eCommerceModel.FK_WEB_Invoices_WEB_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="eCommerceModel.FK_WEB_Invoice_Items_WEB_Invoices" ManuallyRouted="false" />
+        <AssociationConnector Association="eCommerceModel.FK_WEB_Payments_WEB_Invoices" ManuallyRouted="false" />
+        <AssociationConnector Association="eCommerceModel.FK_WEB_InvoiceType_WEB_InvoiceType" ManuallyRouted="false" />
+        <AssociationConnector Association="eCommerceModel.FK_WEB_InvoiceType_WEB_InvoiceType1" ManuallyRouted="false" />
+        <AssociationConnector Association="eCommerceModel.FK_WEB_ItemType_WEB_InvoiceType" ManuallyRouted="false" />
+        <AssociationConnector Association="eCommerceModel.FK_WEB_ItemType_CreditGLs_WEB_ItemType" ManuallyRouted="false" />
+        <AssociationConnector Association="eCommerceModel.FK_SetNumbers_WEB_Invoices" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

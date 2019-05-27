@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="nopCommerceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StoreId" Type="int" Nullable="false" />
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+          <Property Name="BillingAddressId" Type="int" Nullable="false" />
+          <Property Name="ShippingAddressId" Type="int" />
+          <Property Name="PickUpInStore" Type="bit" Nullable="false" />
+          <Property Name="OrderStatusId" Type="int" Nullable="false" />
+          <Property Name="ShippingStatusId" Type="int" Nullable="false" />
+          <Property Name="PaymentStatusId" Type="int" Nullable="false" />
+          <Property Name="PaymentMethodSystemName" Type="nvarchar(max)" />
+          <Property Name="CustomerCurrencyCode" Type="nvarchar(max)" />
+          <Property Name="CurrencyRate" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+          <Property Name="CustomerTaxDisplayTypeId" Type="int" Nullable="false" />
+          <Property Name="VatNumber" Type="nvarchar(max)" />
+          <Property Name="OrderSubtotalInclTax" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="OrderSubtotalExclTax" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="OrderSubTotalDiscountInclTax" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="OrderSubTotalDiscountExclTax" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="OrderShippingInclTax" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="OrderShippingExclTax" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="PaymentMethodAdditionalFeeInclTax" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="PaymentMethodAdditionalFeeExclTax" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="TaxRates" Type="nvarchar(max)" />
+          <Property Name="OrderTax" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="OrderDiscount" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="OrderTotal" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="RefundedAmount" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="RewardPointsWereAdded" Type="bit" Nullable="false" />
+          <Property Name="CheckoutAttributeDescription" Type="nvarchar(max)" />
+          <Property Name="CheckoutAttributesXml" Type="nvarchar(max)" />
+          <Property Name="CustomerLanguageId" Type="int" Nullable="false" />
+          <Property Name="AffiliateId" Type="int" Nullable="false" />
+          <Property Name="CustomerIp" Type="nvarchar(max)" />
+          <Property Name="AllowStoringCreditCardNumber" Type="bit" Nullable="false" />
+          <Property Name="CardType" Type="nvarchar(max)" />
+          <Property Name="CardName" Type="nvarchar(max)" />
+          <Property Name="CardNumber" Type="nvarchar(max)" />
+          <Property Name="MaskedCreditCardNumber" Type="nvarchar(max)" />
+          <Property Name="CardCvv2" Type="nvarchar(max)" />
+          <Property Name="CardExpirationMonth" Type="nvarchar(max)" />
+          <Property Name="CardExpirationYear" Type="nvarchar(max)" />
+          <Property Name="AuthorizationTransactionId" Type="nvarchar(max)" />
+          <Property Name="AuthorizationTransactionCode" Type="nvarchar(max)" />
+          <Property Name="AuthorizationTransactionResult" Type="nvarchar(max)" />
+          <Property Name="CaptureTransactionId" Type="nvarchar(max)" />
+          <Property Name="CaptureTransactionResult" Type="nvarchar(max)" />
+          <Property Name="SubscriptionTransactionId" Type="nvarchar(max)" />
+          <Property Name="PaidDateUtc" Type="datetime" />
+          <Property Name="ShippingMethod" Type="nvarchar(max)" />
+          <Property Name="ShippingRateComputationMethodSystemName" Type="nvarchar(max)" />
+          <Property Name="CustomValuesXml" Type="nvarchar(max)" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="CreatedOnUtc" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderUSBankTransactionKeys">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="TransactionKey" Type="int" />
+        </EntityType>
+        <EntityContainer Name="nopCommerceModelStoreContainer">
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderUSBankTransactionKeys" EntityType="Self.OrderUSBankTransactionKeys" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="nopCommerceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderGuid" Type="Guid" Nullable="false" />
+          <Property Name="StoreId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="BillingAddressId" Type="Int32" Nullable="false" />
+          <Property Name="ShippingAddressId" Type="Int32" />
+          <Property Name="PickUpInStore" Type="Boolean" Nullable="false" />
+          <Property Name="OrderStatusId" Type="Int32" Nullable="false" />
+          <Property Name="ShippingStatusId" Type="Int32" Nullable="false" />
+          <Property Name="PaymentStatusId" Type="Int32" Nullable="false" />
+          <Property Name="PaymentMethodSystemName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerCurrencyCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CurrencyRate" Type="Decimal" Precision="18" Scale="8" Nullable="false" />
+          <Property Name="CustomerTaxDisplayTypeId" Type="Int32" Nullable="false" />
+          <Property Name="VatNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OrderSubtotalInclTax" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="OrderSubtotalExclTax" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="OrderSubTotalDiscountInclTax" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="OrderSubTotalDiscountExclTax" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="OrderShippingInclTax" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="OrderShippingExclTax" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="PaymentMethodAdditionalFeeInclTax" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="PaymentMethodAdditionalFeeExclTax" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="TaxRates" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OrderTax" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="OrderDiscount" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="OrderTotal" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="RefundedAmount" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="RewardPointsWereAdded" Type="Boolean" Nullable="false" />
+          <Property Name="CheckoutAttributeDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CheckoutAttributesXml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerLanguageId" Type="Int32" Nullable="false" />
+          <Property Name="AffiliateId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerIp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AllowStoringCreditCardNumber" Type="Boolean" Nullable="false" />
+          <Property Name="CardType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CardName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CardNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaskedCreditCardNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CardCvv2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CardExpirationMonth" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CardExpirationYear" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AuthorizationTransactionId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AuthorizationTransactionCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AuthorizationTransactionResult" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CaptureTransactionId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CaptureTransactionResult" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SubscriptionTransactionId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PaidDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="ShippingMethod" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingRateComputationMethodSystemName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomValuesXml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOnUtc" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="OrderUSBankTransactionKey">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="TransactionKey" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="nopCommerceEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="OrderUSBankTransactionKeys" EntityType="Self.OrderUSBankTransactionKey" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="nopCommerceModelStoreContainer" CdmEntityContainer="nopCommerceEntities">
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="nopCommerceModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OrderGuid" ColumnName="OrderGuid" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="BillingAddressId" ColumnName="BillingAddressId" />
+                <ScalarProperty Name="ShippingAddressId" ColumnName="ShippingAddressId" />
+                <ScalarProperty Name="PickUpInStore" ColumnName="PickUpInStore" />
+                <ScalarProperty Name="OrderStatusId" ColumnName="OrderStatusId" />
+                <ScalarProperty Name="ShippingStatusId" ColumnName="ShippingStatusId" />
+                <ScalarProperty Name="PaymentStatusId" ColumnName="PaymentStatusId" />
+                <ScalarProperty Name="PaymentMethodSystemName" ColumnName="PaymentMethodSystemName" />
+                <ScalarProperty Name="CustomerCurrencyCode" ColumnName="CustomerCurrencyCode" />
+                <ScalarProperty Name="CurrencyRate" ColumnName="CurrencyRate" />
+                <ScalarProperty Name="CustomerTaxDisplayTypeId" ColumnName="CustomerTaxDisplayTypeId" />
+                <ScalarProperty Name="VatNumber" ColumnName="VatNumber" />
+                <ScalarProperty Name="OrderSubtotalInclTax" ColumnName="OrderSubtotalInclTax" />
+                <ScalarProperty Name="OrderSubtotalExclTax" ColumnName="OrderSubtotalExclTax" />
+                <ScalarProperty Name="OrderSubTotalDiscountInclTax" ColumnName="OrderSubTotalDiscountInclTax" />
+                <ScalarProperty Name="OrderSubTotalDiscountExclTax" ColumnName="OrderSubTotalDiscountExclTax" />
+                <ScalarProperty Name="OrderShippingInclTax" ColumnName="OrderShippingInclTax" />
+                <ScalarProperty Name="OrderShippingExclTax" ColumnName="OrderShippingExclTax" />
+                <ScalarProperty Name="PaymentMethodAdditionalFeeInclTax" ColumnName="PaymentMethodAdditionalFeeInclTax" />
+                <ScalarProperty Name="PaymentMethodAdditionalFeeExclTax" ColumnName="PaymentMethodAdditionalFeeExclTax" />
+                <ScalarProperty Name="TaxRates" ColumnName="TaxRates" />
+                <ScalarProperty Name="OrderTax" ColumnName="OrderTax" />
+                <ScalarProperty Name="OrderDiscount" ColumnName="OrderDiscount" />
+                <ScalarProperty Name="OrderTotal" ColumnName="OrderTotal" />
+                <ScalarProperty Name="RefundedAmount" ColumnName="RefundedAmount" />
+                <ScalarProperty Name="RewardPointsWereAdded" ColumnName="RewardPointsWereAdded" />
+                <ScalarProperty Name="CheckoutAttributeDescription" ColumnName="CheckoutAttributeDescription" />
+                <ScalarProperty Name="CheckoutAttributesXml" ColumnName="CheckoutAttributesXml" />
+                <ScalarProperty Name="CustomerLanguageId" ColumnName="CustomerLanguageId" />
+                <ScalarProperty Name="AffiliateId" ColumnName="AffiliateId" />
+                <ScalarProperty Name="CustomerIp" ColumnName="CustomerIp" />
+                <ScalarProperty Name="AllowStoringCreditCardNumber" ColumnName="AllowStoringCreditCardNumber" />
+                <ScalarProperty Name="CardType" ColumnName="CardType" />
+                <ScalarProperty Name="CardName" ColumnName="CardName" />
+                <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+                <ScalarProperty Name="MaskedCreditCardNumber" ColumnName="MaskedCreditCardNumber" />
+                <ScalarProperty Name="CardCvv2" ColumnName="CardCvv2" />
+                <ScalarProperty Name="CardExpirationMonth" ColumnName="CardExpirationMonth" />
+                <ScalarProperty Name="CardExpirationYear" ColumnName="CardExpirationYear" />
+                <ScalarProperty Name="AuthorizationTransactionId" ColumnName="AuthorizationTransactionId" />
+                <ScalarProperty Name="AuthorizationTransactionCode" ColumnName="AuthorizationTransactionCode" />
+                <ScalarProperty Name="AuthorizationTransactionResult" ColumnName="AuthorizationTransactionResult" />
+                <ScalarProperty Name="CaptureTransactionId" ColumnName="CaptureTransactionId" />
+                <ScalarProperty Name="CaptureTransactionResult" ColumnName="CaptureTransactionResult" />
+                <ScalarProperty Name="SubscriptionTransactionId" ColumnName="SubscriptionTransactionId" />
+                <ScalarProperty Name="PaidDateUtc" ColumnName="PaidDateUtc" />
+                <ScalarProperty Name="ShippingMethod" ColumnName="ShippingMethod" />
+                <ScalarProperty Name="ShippingRateComputationMethodSystemName" ColumnName="ShippingRateComputationMethodSystemName" />
+                <ScalarProperty Name="CustomValuesXml" ColumnName="CustomValuesXml" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="CreatedOnUtc" ColumnName="CreatedOnUtc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderUSBankTransactionKeys">
+            <EntityTypeMapping TypeName="nopCommerceModel.OrderUSBankTransactionKey">
+              <MappingFragment StoreEntitySet="OrderUSBankTransactionKeys">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="TransactionKey" ColumnName="TransactionKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,788 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eCommerceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Administrator">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NotifyIrregularStatus" Type="Boolean" />
+    <Property Name="NotifySummary" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ARCodeType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="dtproperty">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="objectid" Type="Int32" />
+    <Property Name="property" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="value" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="uvalue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="lvalue" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="version" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Invoice_Trans">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Invoice" Type="Int32" />
+    <Property Name="Set_Number" Type="Int32" />
+    <Property Name="Item_Type" Type="Int32" />
+    <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Total" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Item_ID" Type="Int32" />
+    <Property Name="Date_Submitted" Type="DateTime" Precision="3" />
+    <Property Name="Transaction_Status" Type="Int32" />
+    <Property Name="Status_User" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status_Date" Type="DateTime" Precision="3" />
+    <Property Name="Date_Processed" Type="DateTime" Precision="3" />
+    <Property Name="Coupon_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Payment_Types">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RemittanceDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DataDate" Type="DateTime" Precision="3" />
+    <Property Name="Completed" Type="Int32" />
+    <Property Name="RecordIndicator" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TransactionConfirmationID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="BillerProductCode" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="AmountDue" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PaymentAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ConvenienceFee" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PaymentEffectiveDate" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="InitiationDate" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="PaymentType" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentAuthorization" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentStatus" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="ACHReturnCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="ReasonDescription" Type="String" MaxLength="48" FixedLength="false" Unicode="false" />
+    <Property Name="ReturnDate" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="AccessMethod" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="UserID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="StreetAddress1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StreetAddress2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="StateCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="ZipCode5" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="ZipCode4" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="DateSubmitted" Type="DateTime" Precision="3" />
+    <Property Name="ProductName" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionKey" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SetNumber">
+    <Key>
+      <PropertyRef Name="Set_Number" />
+    </Key>
+    <Property Name="Set_Number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Invoice" Type="Int32" />
+    <NavigationProperty Name="SlateDetails" Relationship="Self.FK_SlateDetails_SetNumbers" FromRole="SetNumbers" ToRole="SlateDetails" />
+    <NavigationProperty Name="WEB_Invoices" Relationship="eCommerceModel.FK_SetNumbers_WEB_Invoices" FromRole="SetNumber" ToRole="WEB_Invoices" />
+  </EntityType>
+  <EntityType Name="SetReversal">
+    <Key>
+      <PropertyRef Name="Set_Number" />
+    </Key>
+    <Property Name="Set_Number" Type="Int32" Nullable="false" />
+    <Property Name="Invoice" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SlateDetailGLNumber">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="accountNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SlateDetails" Relationship="Self.FK_SlateDetails_SlateDetailGLNumbers" FromRole="SlateDetailGLNumbers" ToRole="SlateDetails" />
+    <NavigationProperty Name="SlateDetails1" Relationship="Self.FK_SlateDetails_SlateDetailGLNumbers1" FromRole="SlateDetailGLNumbers" ToRole="SlateDetails" />
+  </EntityType>
+  <EntityType Name="SlateDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="paymentDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="netAmount" Type="Double" Nullable="false" />
+    <Property Name="fee" Type="Double" Nullable="false" />
+    <Property Name="revenueGLAccountID" Type="Int32" />
+    <Property Name="feesGLAccountID" Type="Int32" />
+    <Property Name="firstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="lastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="action" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="whitworthID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="invoiceID" Type="Int32" />
+    <Property Name="setNumberID" Type="Int32" />
+    <Property Name="dateProcessed" Type="DateTime" Precision="7" />
+    <NavigationProperty Name="SetNumber" Relationship="Self.FK_SlateDetails_SetNumbers" FromRole="SlateDetails" ToRole="SetNumbers" />
+    <NavigationProperty Name="SlateDetailGLNumber" Relationship="Self.FK_SlateDetails_SlateDetailGLNumbers" FromRole="SlateDetails" ToRole="SlateDetailGLNumbers" />
+    <NavigationProperty Name="SlateDetailGLNumber1" Relationship="Self.FK_SlateDetails_SlateDetailGLNumbers1" FromRole="SlateDetails" ToRole="SlateDetailGLNumbers" />
+    <NavigationProperty Name="WEB_Invoices" Relationship="Self.FK_SlateDetails_WEB_Invoices" FromRole="SlateDetails" ToRole="WEB_Invoices" />
+  </EntityType>
+  <EntityType Name="SummerGLChanx">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OldGL" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="NewGL" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="DateSubmitted" Type="DateTime" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TaxRate">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Rate" Type="Decimal" Precision="8" Scale="6" />
+  </EntityType>
+  <EntityType Name="Trans_Status_Types">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="WEB_Address">
+    <Key>
+      <PropertyRef Name="ADDR_ID" />
+    </Key>
+    <Property Name="ADDR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ZIP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STATE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COUNTRY" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ADDRESS_LINES1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADDRESS_LINES2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="WEB_Address1" Relationship="Self.FK_WEB_Address_WEB_Address" FromRole="WEB_Address" ToRole="WEB_Address1" />
+    <NavigationProperty Name="WEB_Address2" Relationship="Self.FK_WEB_Address_WEB_Address" FromRole="WEB_Address1" ToRole="WEB_Address" />
+    <NavigationProperty Name="WEB_Customer" Relationship="Self.FK_WEB_Customer_WEB_Address" FromRole="WEB_Address" ToRole="WEB_Customer" />
+  </EntityType>
+  <EntityType Name="WEB_ChargeType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="WEB_ControlEvaluationTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="WEB_CouponCodeTypes">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EffectType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EffectAmount" Type="Double" />
+    <Property Name="MaxUse" Type="Int32" />
+    <Property Name="RequireWhitworthID" Type="Int32" />
+    <Property Name="Active" Type="Int32" />
+  </EntityType>
+  <EntityType Name="WEB_Customer">
+    <Key>
+      <PropertyRef Name="Customer_ID" />
+    </Key>
+    <Property Name="Customer_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="MIDDLE_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PREFIX" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FULL_NAME" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="ADDR_Id" Type="Int32" />
+    <Property Name="Email_Addr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Phone_Number" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Phone_Ext" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="Phone_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Whit_ID" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="Refund_ID" Type="Int32" />
+    <NavigationProperty Name="WEB_Address" Relationship="Self.FK_WEB_Customer_WEB_Address" FromRole="WEB_Customer" ToRole="WEB_Address" />
+    <NavigationProperty Name="WEB_Customer1" Relationship="Self.FK_WEB_Customer_WEB_Customer" FromRole="WEB_Customer" ToRole="WEB_Customer1" />
+    <NavigationProperty Name="WEB_Customer2" Relationship="Self.FK_WEB_Customer_WEB_Customer" FromRole="WEB_Customer1" ToRole="WEB_Customer" />
+    <NavigationProperty Name="WEB_Invoices" Relationship="Self.FK_WEB_Invoices_WEB_Customer" FromRole="WEB_Customer" ToRole="WEB_Invoices" />
+  </EntityType>
+  <EntityType Name="WEB_Invoice_Items">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Invoice" Type="Int32" />
+    <Property Name="Set_Number" Type="Int32" />
+    <Property Name="Item_Type" Type="Int32" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Total" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SalesTax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BOGoodsTax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BOServicesTax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Purchase_Date" Type="DateTime" Precision="3" />
+    <Property Name="Process_Date" Type="DateTime" Precision="3" />
+    <Property Name="Imported" Type="Boolean" />
+    <Property Name="Cancel" Type="Boolean" />
+    <Property Name="Cancel_Set" Type="Int32" />
+    <Property Name="Cancel_Date" Type="DateTime" Precision="3" />
+    <Property Name="Cancel_Imported" Type="Boolean" />
+    <Property Name="Coupon_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="WEB_Invoices" Relationship="Self.FK_WEB_Invoice_Items_WEB_Invoices" FromRole="WEB_Invoice_Items" ToRole="WEB_Invoices" />
+  </EntityType>
+  <EntityType Name="WEB_Invoices">
+    <Key>
+      <PropertyRef Name="Inv_NO" />
+    </Key>
+    <Property Name="Inv_NO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Inv_Customer_ID" Type="Int32" Nullable="false" />
+    <Property Name="Inv_TYPE" Type="Int32" />
+    <Property Name="Inv_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Inv_Completed" Type="DateTime" Precision="3" />
+    <Property Name="Inv_Final_Modify" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="SlateDetails" Relationship="Self.FK_SlateDetails_WEB_Invoices" FromRole="WEB_Invoices" ToRole="SlateDetails" />
+    <NavigationProperty Name="WEB_Customer" Relationship="Self.FK_WEB_Invoices_WEB_Customer" FromRole="WEB_Invoices" ToRole="WEB_Customer" />
+    <NavigationProperty Name="WEB_Invoice_Items" Relationship="Self.FK_WEB_Invoice_Items_WEB_Invoices" FromRole="WEB_Invoices" ToRole="WEB_Invoice_Items" />
+    <NavigationProperty Name="WEB_Payments" Relationship="Self.FK_WEB_Payments_WEB_Invoices" FromRole="WEB_Invoices" ToRole="WEB_Payments" />
+    <NavigationProperty Name="SetNumbers" Relationship="eCommerceModel.FK_SetNumbers_WEB_Invoices" FromRole="WEB_Invoices" ToRole="SetNumber" />
+  </EntityType>
+  <EntityType Name="WEB_InvoiceType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="URL" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="FinalModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyTimeToExpiration" Type="Int32" />
+    <Property Name="AllowChanges" Type="Int32" />
+    <Property Name="AllowCancellation" Type="Int32" />
+    <Property Name="NotifyOnPayment" Type="Boolean" />
+    <Property Name="PreviousPaymentRequiredForRefund" Type="Boolean" />
+    <NavigationProperty Name="WEB_InvoiceType1" Relationship="Self.FK_WEB_InvoiceType_WEB_InvoiceType" FromRole="WEB_InvoiceType" ToRole="WEB_InvoiceType1" />
+    <NavigationProperty Name="WEB_InvoiceType2" Relationship="Self.FK_WEB_InvoiceType_WEB_InvoiceType" FromRole="WEB_InvoiceType1" ToRole="WEB_InvoiceType" />
+    <NavigationProperty Name="WEB_InvoiceType11" Relationship="Self.FK_WEB_InvoiceType_WEB_InvoiceType1" FromRole="WEB_InvoiceType" ToRole="WEB_InvoiceType1" />
+    <NavigationProperty Name="WEB_InvoiceType3" Relationship="Self.FK_WEB_InvoiceType_WEB_InvoiceType1" FromRole="WEB_InvoiceType1" ToRole="WEB_InvoiceType" />
+    <NavigationProperty Name="WEB_ItemType" Relationship="Self.FK_WEB_ItemType_WEB_InvoiceType" FromRole="WEB_InvoiceType" ToRole="WEB_ItemType" />
+  </EntityType>
+  <EntityType Name="WEB_ItemCouponCodes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemType" Type="Int32" />
+    <Property Name="CodeType" Type="Int32" />
+  </EntityType>
+  <EntityType Name="WEB_ItemType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceType" Type="Int32" Nullable="false" />
+    <Property Name="ShortDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ChargeType" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Item_Amt" Type="Double" />
+    <Property Name="Item_GL_Debit" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Control_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ControlEvaluationType" Type="Int32" />
+    <Property Name="Item_AR_Code" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Item_Account_Type" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="ShowOnBackend" Type="Int32" />
+    <Property Name="AmtVariable" Type="Int32" />
+    <NavigationProperty Name="WEB_InvoiceType" Relationship="Self.FK_WEB_ItemType_WEB_InvoiceType" FromRole="WEB_ItemType" ToRole="WEB_InvoiceType" />
+    <NavigationProperty Name="WEB_ItemType_CreditGLs" Relationship="Self.FK_WEB_ItemType_CreditGLs_WEB_ItemType" FromRole="WEB_ItemType" ToRole="WEB_ItemType_CreditGLs" />
+  </EntityType>
+  <EntityType Name="WEB_ItemType_CreditGLs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemType" Type="Int32" />
+    <Property Name="CreditGL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ChargeAmount" Type="Int32" />
+    <Property Name="DivisionType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="WEB_ItemType" Relationship="Self.FK_WEB_ItemType_CreditGLs_WEB_ItemType" FromRole="WEB_ItemType_CreditGLs" ToRole="WEB_ItemType" />
+  </EntityType>
+  <EntityType Name="WEB_Payments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Invoice" Type="Int32" />
+    <Property Name="Set_Number" Type="Int32" />
+    <Property Name="Total" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="Confirmation_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Paid_Date" Type="DateTime" Precision="3" />
+    <Property Name="Payment_Processed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Cancel_Conf_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cancel_Date" Type="DateTime" Precision="3" />
+    <Property Name="Cancel_Processed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Data_Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="WEB_Invoices" Relationship="Self.FK_WEB_Payments_WEB_Invoices" FromRole="WEB_Payments" ToRole="WEB_Invoices" />
+  </EntityType>
+  <EntityType Name="WebTeamAdministrator">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="WEB_CustomerUpdate">
+    <Key>
+      <PropertyRef Name="UpdateID" />
+    </Key>
+    <Property Name="Customer_ID" Type="Int32" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="MIDDLE_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PREFIX" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FULL_NAME" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="ADDR_Id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Email_Addr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Phone_Number" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="Phone_Ext" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Phone_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WEB_GLChanges">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Item_Amt" Type="Double" />
+    <Property Name="Item_Action" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Item_GL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Item_ID" Type="Int32" />
+    <Property Name="Date_Submitted" Type="DateTime" Precision="3" />
+    <Property Name="Processed" Type="Int32" />
+    <Property Name="Date_Processed" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="WEB_Invoices_Archive">
+    <Key>
+      <PropertyRef Name="Inv_NO" />
+      <PropertyRef Name="Inv_Customer_ID" />
+      <PropertyRef Name="Inv_DATE" />
+      <PropertyRef Name="Inv_Posted_Flag" />
+    </Key>
+    <Property Name="Inv_NO" Type="Int32" Nullable="false" />
+    <Property Name="Inv_Customer_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Inv_TYPE" Type="Int32" />
+    <Property Name="Inv_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Inv_Posted_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="Inv_Completed" Type="DateTime" Precision="3" />
+    <Property Name="Inv_Payment_Type" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Inv_Active" Type="Boolean" />
+    <Property Name="Inv_Confirmation_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Inv_Amt_Paid" Type="Double" />
+    <Property Name="Inv_Paid" Type="Int32" />
+    <Property Name="Inv_Paid_Date" Type="DateTime" Precision="3" />
+    <Property Name="Inv_Imported" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Web_InvoiceSupervisors">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceType" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="WEB_ItemTaxes">
+    <Key>
+      <PropertyRef Name="ItemType" />
+      <PropertyRef Name="TaxType" />
+    </Key>
+    <Property Name="ItemType" Type="Int32" Nullable="false" />
+    <Property Name="TaxType" Type="Int32" Nullable="false" />
+    <Property Name="DebitGL" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="CreditGL" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="WEB_PhoneTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ActiveGLAccounts_v">
+    <Key>
+      <PropertyRef Name="GLNumber" />
+    </Key>
+    <Property Name="GLNumber" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Invoice_Totals_V">
+    <Key>
+      <PropertyRef Name="Total_Paid" />
+      <PropertyRef Name="Item_Total" />
+      <PropertyRef Name="Total_Refunds" />
+      <PropertyRef Name="Total_Unpaid_With_Conf" />
+      <PropertyRef Name="Total_Unpaid_Without_Conf" />
+    </Key>
+    <Property Name="Invoice" Type="Int32" />
+    <Property Name="Total_Paid" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Item_Total" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Total_Refunds" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Total_Unpaid_With_Conf" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Total_Unpaid_Without_Conf" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Invoice_Trans_Amounts_V">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Invoice" Type="Int32" />
+    <Property Name="Set_Number" Type="Int32" />
+    <Property Name="Item_Type" Type="Int32" />
+    <Property Name="Total" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="Items_Available_V">
+    <Key>
+      <PropertyRef Name="Item_Type" />
+    </Key>
+    <Property Name="Item_Type" Type="Int32" Nullable="false" />
+    <Property Name="Available" Type="Int32" />
+  </EntityType>
+  <EntityType Name="WEB_ItemTaxes_V">
+    <Key>
+      <PropertyRef Name="ItemType" />
+    </Key>
+    <Property Name="ItemType" Type="Int32" Nullable="false" />
+    <Property Name="SalesTaxRate" Type="Decimal" Precision="8" Scale="6" />
+    <Property Name="SalesDebitGL" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="SalesCreditGL" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="BOGoodsTaxRate" Type="Decimal" Precision="8" Scale="6" />
+    <Property Name="BOGoodsDebitGL" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="BOGoodsCreditGL" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="BOServicesTaxRate" Type="Decimal" Precision="8" Scale="6" />
+    <Property Name="BOServicesDebitGL" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="BOServicesCreditGL" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_SlateDetails_SetNumbers">
+    <End Role="SetNumbers" Type="Self.SetNumber" Multiplicity="0..1" />
+    <End Role="SlateDetails" Type="Self.SlateDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SetNumbers">
+        <PropertyRef Name="Set_Number" />
+      </Principal>
+      <Dependent Role="SlateDetails">
+        <PropertyRef Name="setNumberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SlateDetails_SlateDetailGLNumbers">
+    <End Role="SlateDetailGLNumbers" Type="Self.SlateDetailGLNumber" Multiplicity="0..1" />
+    <End Role="SlateDetails" Type="Self.SlateDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SlateDetailGLNumbers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SlateDetails">
+        <PropertyRef Name="revenueGLAccountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SlateDetails_SlateDetailGLNumbers1">
+    <End Role="SlateDetailGLNumbers" Type="Self.SlateDetailGLNumber" Multiplicity="0..1" />
+    <End Role="SlateDetails" Type="Self.SlateDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SlateDetailGLNumbers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SlateDetails">
+        <PropertyRef Name="feesGLAccountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SlateDetails_WEB_Invoices">
+    <End Role="WEB_Invoices" Type="Self.WEB_Invoices" Multiplicity="0..1" />
+    <End Role="SlateDetails" Type="Self.SlateDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WEB_Invoices">
+        <PropertyRef Name="Inv_NO" />
+      </Principal>
+      <Dependent Role="SlateDetails">
+        <PropertyRef Name="invoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WEB_Address_WEB_Address">
+    <End Role="WEB_Address" Type="Self.WEB_Address" Multiplicity="1" />
+    <End Role="WEB_Address1" Type="Self.WEB_Address" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="WEB_Address">
+        <PropertyRef Name="ADDR_ID" />
+      </Principal>
+      <Dependent Role="WEB_Address1">
+        <PropertyRef Name="ADDR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WEB_Customer_WEB_Address">
+    <End Role="WEB_Address" Type="Self.WEB_Address" Multiplicity="0..1" />
+    <End Role="WEB_Customer" Type="Self.WEB_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WEB_Address">
+        <PropertyRef Name="ADDR_ID" />
+      </Principal>
+      <Dependent Role="WEB_Customer">
+        <PropertyRef Name="ADDR_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WEB_Customer_WEB_Customer">
+    <End Role="WEB_Customer" Type="Self.WEB_Customer" Multiplicity="1" />
+    <End Role="WEB_Customer1" Type="Self.WEB_Customer" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="WEB_Customer">
+        <PropertyRef Name="Customer_ID" />
+      </Principal>
+      <Dependent Role="WEB_Customer1">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WEB_Invoices_WEB_Customer">
+    <End Role="WEB_Customer" Type="Self.WEB_Customer" Multiplicity="1" />
+    <End Role="WEB_Invoices" Type="Self.WEB_Invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WEB_Customer">
+        <PropertyRef Name="Customer_ID" />
+      </Principal>
+      <Dependent Role="WEB_Invoices">
+        <PropertyRef Name="Inv_Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WEB_Invoice_Items_WEB_Invoices">
+    <End Role="WEB_Invoices" Type="Self.WEB_Invoices" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="WEB_Invoice_Items" Type="Self.WEB_Invoice_Items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WEB_Invoices">
+        <PropertyRef Name="Inv_NO" />
+      </Principal>
+      <Dependent Role="WEB_Invoice_Items">
+        <PropertyRef Name="Invoice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WEB_Payments_WEB_Invoices">
+    <End Role="WEB_Invoices" Type="Self.WEB_Invoices" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="WEB_Payments" Type="Self.WEB_Payments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WEB_Invoices">
+        <PropertyRef Name="Inv_NO" />
+      </Principal>
+      <Dependent Role="WEB_Payments">
+        <PropertyRef Name="Invoice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WEB_InvoiceType_WEB_InvoiceType">
+    <End Role="WEB_InvoiceType" Type="Self.WEB_InvoiceType" Multiplicity="1" />
+    <End Role="WEB_InvoiceType1" Type="Self.WEB_InvoiceType" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="WEB_InvoiceType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WEB_InvoiceType1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WEB_InvoiceType_WEB_InvoiceType1">
+    <End Role="WEB_InvoiceType" Type="Self.WEB_InvoiceType" Multiplicity="1" />
+    <End Role="WEB_InvoiceType1" Type="Self.WEB_InvoiceType" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="WEB_InvoiceType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WEB_InvoiceType1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WEB_ItemType_WEB_InvoiceType">
+    <End Role="WEB_InvoiceType" Type="Self.WEB_InvoiceType" Multiplicity="1" />
+    <End Role="WEB_ItemType" Type="Self.WEB_ItemType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WEB_InvoiceType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WEB_ItemType">
+        <PropertyRef Name="InvoiceType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WEB_ItemType_CreditGLs_WEB_ItemType">
+    <End Role="WEB_ItemType" Type="Self.WEB_ItemType" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="WEB_ItemType_CreditGLs" Type="Self.WEB_ItemType_CreditGLs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WEB_ItemType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="WEB_ItemType_CreditGLs">
+        <PropertyRef Name="ItemType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="eCommerceEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Administrators" EntityType="Self.Administrator" />
+    <EntitySet Name="ARCodeTypes" EntityType="Self.ARCodeType" />
+    <EntitySet Name="dtproperties" EntityType="Self.dtproperty" />
+    <EntitySet Name="Invoice_Trans" EntityType="Self.Invoice_Trans" />
+    <EntitySet Name="Payment_Types" EntityType="Self.Payment_Types" />
+    <EntitySet Name="RemittanceDetails" EntityType="Self.RemittanceDetail" />
+    <EntitySet Name="SetNumbers" EntityType="Self.SetNumber" />
+    <EntitySet Name="SetReversals" EntityType="Self.SetReversal" />
+    <EntitySet Name="SlateDetailGLNumbers" EntityType="Self.SlateDetailGLNumber" />
+    <EntitySet Name="SlateDetails" EntityType="Self.SlateDetail" />
+    <EntitySet Name="SummerGLChanges" EntityType="Self.SummerGLChanx" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TaxRates" EntityType="Self.TaxRate" />
+    <EntitySet Name="Trans_Status_Types" EntityType="Self.Trans_Status_Types" />
+    <EntitySet Name="WEB_Address" EntityType="Self.WEB_Address" />
+    <EntitySet Name="WEB_ChargeType" EntityType="Self.WEB_ChargeType" />
+    <EntitySet Name="WEB_ControlEvaluationTypes" EntityType="Self.WEB_ControlEvaluationTypes" />
+    <EntitySet Name="WEB_CouponCodeTypes" EntityType="Self.WEB_CouponCodeTypes" />
+    <EntitySet Name="WEB_Customer" EntityType="Self.WEB_Customer" />
+    <EntitySet Name="WEB_Invoice_Items" EntityType="Self.WEB_Invoice_Items" />
+    <EntitySet Name="WEB_Invoices" EntityType="Self.WEB_Invoices" />
+    <EntitySet Name="WEB_InvoiceType" EntityType="Self.WEB_InvoiceType" />
+    <EntitySet Name="WEB_ItemCouponCodes" EntityType="Self.WEB_ItemCouponCodes" />
+    <EntitySet Name="WEB_ItemType" EntityType="Self.WEB_ItemType" />
+    <EntitySet Name="WEB_ItemType_CreditGLs" EntityType="Self.WEB_ItemType_CreditGLs" />
+    <EntitySet Name="WEB_Payments" EntityType="Self.WEB_Payments" />
+    <EntitySet Name="WebTeamAdministrators" EntityType="Self.WebTeamAdministrator" />
+    <EntitySet Name="WEB_CustomerUpdate" EntityType="Self.WEB_CustomerUpdate" />
+    <EntitySet Name="WEB_GLChanges" EntityType="Self.WEB_GLChanges" />
+    <EntitySet Name="WEB_Invoices_Archive" EntityType="Self.WEB_Invoices_Archive" />
+    <EntitySet Name="Web_InvoiceSupervisors" EntityType="Self.Web_InvoiceSupervisors" />
+    <EntitySet Name="WEB_ItemTaxes" EntityType="Self.WEB_ItemTaxes" />
+    <EntitySet Name="WEB_PhoneTypes" EntityType="Self.WEB_PhoneTypes" />
+    <EntitySet Name="ActiveGLAccounts_v" EntityType="Self.ActiveGLAccounts_v" />
+    <EntitySet Name="Invoice_Totals_V" EntityType="Self.Invoice_Totals_V" />
+    <EntitySet Name="Invoice_Trans_Amounts_V" EntityType="Self.Invoice_Trans_Amounts_V" />
+    <EntitySet Name="Items_Available_V" EntityType="Self.Items_Available_V" />
+    <EntitySet Name="WEB_ItemTaxes_V" EntityType="Self.WEB_ItemTaxes_V" />
+    <AssociationSet Name="FK_SlateDetails_SetNumbers" Association="Self.FK_SlateDetails_SetNumbers">
+      <End Role="SetNumbers" EntitySet="SetNumbers" />
+      <End Role="SlateDetails" EntitySet="SlateDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SlateDetails_SlateDetailGLNumbers" Association="Self.FK_SlateDetails_SlateDetailGLNumbers">
+      <End Role="SlateDetailGLNumbers" EntitySet="SlateDetailGLNumbers" />
+      <End Role="SlateDetails" EntitySet="SlateDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SlateDetails_SlateDetailGLNumbers1" Association="Self.FK_SlateDetails_SlateDetailGLNumbers1">
+      <End Role="SlateDetailGLNumbers" EntitySet="SlateDetailGLNumbers" />
+      <End Role="SlateDetails" EntitySet="SlateDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SlateDetails_WEB_Invoices" Association="Self.FK_SlateDetails_WEB_Invoices">
+      <End Role="WEB_Invoices" EntitySet="WEB_Invoices" />
+      <End Role="SlateDetails" EntitySet="SlateDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WEB_Address_WEB_Address" Association="Self.FK_WEB_Address_WEB_Address">
+      <End Role="WEB_Address" EntitySet="WEB_Address" />
+      <End Role="WEB_Address1" EntitySet="WEB_Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WEB_Customer_WEB_Address" Association="Self.FK_WEB_Customer_WEB_Address">
+      <End Role="WEB_Address" EntitySet="WEB_Address" />
+      <End Role="WEB_Customer" EntitySet="WEB_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WEB_Customer_WEB_Customer" Association="Self.FK_WEB_Customer_WEB_Customer">
+      <End Role="WEB_Customer" EntitySet="WEB_Customer" />
+      <End Role="WEB_Customer1" EntitySet="WEB_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WEB_Invoices_WEB_Customer" Association="Self.FK_WEB_Invoices_WEB_Customer">
+      <End Role="WEB_Customer" EntitySet="WEB_Customer" />
+      <End Role="WEB_Invoices" EntitySet="WEB_Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WEB_Invoice_Items_WEB_Invoices" Association="Self.FK_WEB_Invoice_Items_WEB_Invoices">
+      <End Role="WEB_Invoices" EntitySet="WEB_Invoices" />
+      <End Role="WEB_Invoice_Items" EntitySet="WEB_Invoice_Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WEB_Payments_WEB_Invoices" Association="Self.FK_WEB_Payments_WEB_Invoices">
+      <End Role="WEB_Invoices" EntitySet="WEB_Invoices" />
+      <End Role="WEB_Payments" EntitySet="WEB_Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WEB_InvoiceType_WEB_InvoiceType" Association="Self.FK_WEB_InvoiceType_WEB_InvoiceType">
+      <End Role="WEB_InvoiceType" EntitySet="WEB_InvoiceType" />
+      <End Role="WEB_InvoiceType1" EntitySet="WEB_InvoiceType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WEB_InvoiceType_WEB_InvoiceType1" Association="Self.FK_WEB_InvoiceType_WEB_InvoiceType1">
+      <End Role="WEB_InvoiceType" EntitySet="WEB_InvoiceType" />
+      <End Role="WEB_InvoiceType1" EntitySet="WEB_InvoiceType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WEB_ItemType_WEB_InvoiceType" Association="Self.FK_WEB_ItemType_WEB_InvoiceType">
+      <End Role="WEB_InvoiceType" EntitySet="WEB_InvoiceType" />
+      <End Role="WEB_ItemType" EntitySet="WEB_ItemType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WEB_ItemType_CreditGLs_WEB_ItemType" Association="Self.FK_WEB_ItemType_CreditGLs_WEB_ItemType">
+      <End Role="WEB_ItemType" EntitySet="WEB_ItemType" />
+      <End Role="WEB_ItemType_CreditGLs" EntitySet="WEB_ItemType_CreditGLs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SetNumbers_WEB_Invoices" Association="eCommerceModel.FK_SetNumbers_WEB_Invoices">
+      <End Role="WEB_Invoices" EntitySet="WEB_Invoices" />
+      <End Role="SetNumber" EntitySet="SetNumbers" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_SetNumbers_WEB_Invoices">
+    <End Type="eCommerceModel.WEB_Invoices" Role="WEB_Invoices" Multiplicity="0..1" />
+    <End Type="eCommerceModel.SetNumber" Role="SetNumber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WEB_Invoices">
+        <PropertyRef Name="Inv_NO" />
+      </Principal>
+      <Dependent Role="SetNumber">
+        <PropertyRef Name="Invoice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

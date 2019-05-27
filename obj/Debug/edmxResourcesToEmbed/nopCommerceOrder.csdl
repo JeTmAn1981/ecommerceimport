@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="nopCommerceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderGuid" Type="Guid" Nullable="false" />
+    <Property Name="StoreId" Type="Int32" Nullable="false" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="BillingAddressId" Type="Int32" Nullable="false" />
+    <Property Name="ShippingAddressId" Type="Int32" />
+    <Property Name="PickUpInStore" Type="Boolean" Nullable="false" />
+    <Property Name="OrderStatusId" Type="Int32" Nullable="false" />
+    <Property Name="ShippingStatusId" Type="Int32" Nullable="false" />
+    <Property Name="PaymentStatusId" Type="Int32" Nullable="false" />
+    <Property Name="PaymentMethodSystemName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerCurrencyCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CurrencyRate" Type="Decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="CustomerTaxDisplayTypeId" Type="Int32" Nullable="false" />
+    <Property Name="VatNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OrderSubtotalInclTax" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="OrderSubtotalExclTax" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="OrderSubTotalDiscountInclTax" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="OrderSubTotalDiscountExclTax" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="OrderShippingInclTax" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="OrderShippingExclTax" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="PaymentMethodAdditionalFeeInclTax" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="PaymentMethodAdditionalFeeExclTax" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="TaxRates" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OrderTax" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="OrderDiscount" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="OrderTotal" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="RefundedAmount" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="RewardPointsWereAdded" Type="Boolean" Nullable="false" />
+    <Property Name="CheckoutAttributeDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CheckoutAttributesXml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerLanguageId" Type="Int32" Nullable="false" />
+    <Property Name="AffiliateId" Type="Int32" Nullable="false" />
+    <Property Name="CustomerIp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AllowStoringCreditCardNumber" Type="Boolean" Nullable="false" />
+    <Property Name="CardType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CardName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CardNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MaskedCreditCardNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CardCvv2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CardExpirationMonth" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CardExpirationYear" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AuthorizationTransactionId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AuthorizationTransactionCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AuthorizationTransactionResult" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CaptureTransactionId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CaptureTransactionResult" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SubscriptionTransactionId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PaidDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="ShippingMethod" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingRateComputationMethodSystemName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CustomValuesXml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedOnUtc" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="OrderUSBankTransactionKey">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="TransactionKey" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="nopCommerceEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="OrderUSBankTransactionKeys" EntityType="Self.OrderUSBankTransactionKey" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.EntityFrameworkCore.Design.2.2.4\build\net461\Microsoft.EntityFrameworkCore.Design.props" Condition="Exists('..\packages\Microsoft.EntityFrameworkCore.Design.2.2.4\build\net461\Microsoft.EntityFrameworkCore.Design.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AD0BAEE3-622F-40A3-B2A4-1162A370708C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EcommerceImport</RootNamespace>
+    <AssemblyName>EcommerceImport</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.0.1.1, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.0.1.1\lib\net20\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelToClasses.1.1.3\lib\ExcelLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="FileHelpers, Version=3.2.7.0, Culture=neutral, PublicKeyToken=3e0c08d59cc3d657, processorArchitecture=MSIL">
+      <HintPath>..\packages\FileHelpers.3.2.7\lib\net45\FileHelpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore, Version=2.2.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.2.2.4\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=2.2.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Abstractions.2.2.4\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Design, Version=2.2.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Design.2.2.4\lib\net461\Microsoft.EntityFrameworkCore.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Relational, Version=2.2.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Relational.2.2.4\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.SqlServer, Version=2.2.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.SqlServer.2.2.4\lib\netstandard2.0\Microsoft.EntityFrameworkCore.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.2.2.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.6.0\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Interactive.Async, Version=3.2.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Interactive.Async.3.2.0\lib\net46\System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.1\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WhitTools, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\web1\~Whitworth\~WhitTools\WhitTools\bin\WhitTools.dll</HintPath>
+    </Reference>
+    <Reference Include="WinSCPnet, Version=1.4.0.7725, Culture=neutral, PublicKeyToken=2271ec4a3c56d0bf, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinSCP.5.11.1\lib\WinSCPnet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\ActiveGLAccounts_v.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Administrator.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ARCodeType.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dtproperty.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\eCommerce.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eCommerce.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\eCommerce.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\eCommerce.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eCommerce.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Invoice_Totals_V.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Invoice_Trans.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Invoice_Trans_Amounts_V.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Items_Available_V.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Payment_Types.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\RemittanceDetail.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SetNumber.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SetReversal.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SlateDetail.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SlateDetailGLNumber.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SummerGLChanx.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sysdiagram.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TaxRate.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Trans_Status_Types.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WebTeamAdministrator.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WEB_Address.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WEB_ChargeType.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WEB_ControlEvaluationTypes.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WEB_CouponCodeTypes.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WEB_Customer.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WEB_CustomerUpdate.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WEB_GLChanges.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WEB_Invoices.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Web_InvoiceSupervisors.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WEB_Invoices_Archive.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WEB_InvoiceType.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WEB_Invoice_Items.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WEB_ItemCouponCodes.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WEB_ItemTaxes.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WEB_ItemTaxes_V.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WEB_ItemType.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WEB_ItemType_CreditGLs.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WEB_Payments.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\WEB_PhoneTypes.cs">
+      <DependentUpon>eCommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GLAccount.cs" />
+    <Compile Include="Logging.cs" />
+    <Compile Include="Notifications\Errors\InvalidGLAccountError.cs" />
+    <Compile Include="Notifications\Errors\MissingStudentIDError.cs" />
+    <Compile Include="PaymentProcessors\DebitInvoiceProcessor.cs" />
+    <Compile Include="PaymentProcessors\PaymentSourceProcessor.cs" />
+    <Compile Include="PaymentProcessors\Slate\ItemTypeCreator.cs" />
+    <Compile Include="PaymentProcessors\Slate\SlateDetail.cs" />
+    <Compile Include="PaymentProcessors\Slate\SlateFileProcessor.cs" />
+    <Compile Include="PaymentProcessors\FileProcessor.cs" />
+    <Compile Include="LineWriters\StudentAccount\ImportStudentAccountCreditLineWriter.cs" />
+    <Compile Include="LineWriters\StudentAccount\ImportStudentAccountDebitLineWriter.cs" />
+    <Compile Include="nopCommerceOrder.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>nopCommerceOrder.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="nopCommerceOrder.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>nopCommerceOrder.tt</DependentUpon>
+    </Compile>
+    <Compile Include="nopCommerceOrder.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>nopCommerceOrder.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Notifications\Errors\InvalidItemAmountError.cs" />
+    <Compile Include="Order.cs">
+      <DependentUpon>nopCommerceOrder.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderUSBankTransactionKey.cs">
+      <DependentUpon>nopCommerceOrder.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\RemittanceDetailAdditionalProperties.cs" />
+    <Compile Include="RockSlingEcommerceUpdater.cs" />
+    <Compile Include="Notifications\EcommerceNotification.cs" />
+    <Compile Include="EcommerceUpdater.cs" />
+    <Compile Include="Notifications\Errors\IrregularPaymentStatusError.cs" />
+    <Compile Include="Notifications\Errors\DuplicateRemittanceRecordError.cs" />
+    <Compile Include="PaymentProcessors\Bank\BankFileProcessor.cs" />
+    <Compile Include="LineWriters\StudentAccount\ImportStudentAccountLineWriter.cs" />
+    <Compile Include="LineWriters\ImportGLLineWriter.cs" />
+    <Compile Include="LineWriters\ImportLineWriter.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Notifications\PaymentReceived.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Notifications\Errors\RemittanceDetailProcessingError.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="Notifications\Errors\TotalMismatchError.cs" />
+    <Compile Include="Utilities.cs" />
+    <Compile Include="Data\WEB_Invoice_ItemsAdditionalProperties.cs" />
+    <Compile Include="Data\WEB_ItemTypeAdditionalProperties.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="nopCommerceOrder.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>nopCommerceOrder.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Data\eCommerce.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>eCommerce.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\eCommerce.edmx.diagram">
+      <DependentUpon>eCommerce.edmx</DependentUpon>
+    </None>
+    <None Include="nopCommerceOrder.edmx.diagram">
+      <DependentUpon>nopCommerceOrder.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\eCommerce.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>eCommerce.edmx</DependentUpon>
+      <LastGenOutput>eCommerce.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\eCommerce.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>eCommerce.edmx</DependentUpon>
+      <LastGenOutput>eCommerce.cs</LastGenOutput>
+    </Content>
+    <Content Include="nopCommerceOrder.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>nopCommerceOrder.edmx</DependentUpon>
+      <LastGenOutput>nopCommerceOrder.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="nopCommerceOrder.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>nopCommerceOrder.edmx</DependentUpon>
+      <LastGenOutput>nopCommerceOrder.cs</LastGenOutput>
+    </Content>
+    <Content Include="WinSCP.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\Extensions\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.EntityFrameworkCore.Design.2.2.4\build\net461\Microsoft.EntityFrameworkCore.Design.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.EntityFrameworkCore.Design.2.2.4\build\net461\Microsoft.EntityFrameworkCore.Design.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
