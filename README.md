@@ -13,10 +13,6 @@ Logging - I injected a logging object into the various processes to have a histo
 </li>
 
 <li>
-Tests!  With the pace of the work that's required of me, I don't often get time to write test coverage of any type.  But with this project I was able to put in some key unit tests, found in a separate repo at https://github.com/JeTmAn1981/ecommerceimporttests.
-</li>
-
-<li>
 Proper abstractions - using abstract classes I was able to avoid a lot of code duplication and create reusable classes that could be effective in multiple places not just in this project but in other ETL projects that I have subsequently written.
 </li>
 </ul>
